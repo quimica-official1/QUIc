@@ -1,0 +1,204 @@
+
+:root {
+  --bg-color: #062738;
+  --second-bg-color: #373c46;
+  --white-color: #ffffff;
+  --black-colour: #000000;
+  --main-colour: #FB897F;
+  --main-colour-dark: #3c1a17;
+  --green-color: #A2D258;
+  --yellow-color: #F9CB6B;
+  --cyan-color: #96C4B9;
+}
+
+/* HERO */
+
+.hero {
+  margin-top: 60px;
+  padding: 100px 20px;
+  height: 60vh;       
+  min-height: 320px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin: 3rem 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.hero p {
+  color: #555;
+  font-size: 1.1rem;
+  transition: all 0.5s ease;
+}
+
+/* EVENTS HEADER */
+.events-header {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  gap: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ALL EVENTS BUTTON */
+.all-events-btn {
+  padding: 10px 18px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background: #1f2f46;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.achievements-btn{
+  display: flex;
+  flex-direction: row;   /* horizontal */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;             /* spacing between buttons */
+  flex-wrap: wrap;       /* goes next line only on small screens */
+}
+
+.all-events-btn:hover {
+  background: #2d4668;
+  transform: translateY(-2px);
+}
+
+
+/*  events   */
+.featured-event {
+  max-width: 1200px;
+  margin: 60px auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.featured-image img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.featured-info {
+  flex: 1;
+}
+
+.featured-info h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.featured-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+  max-width: 500px;
+}
+
+.featured-info .date {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #79dfff;
+}
+
+.featured-info button {
+  margin-top: 25px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ===== GRID SECTION ===== */
+.event-grid {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 20px 80px;
+  
+}
+
+.event-card {
+  text-align: center;
+}
+
+.event-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.event-card img:hover {
+  transform: scale(1.04);
+}
+
+.event-card h4 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.event-card p {
+  margin-top: 8px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .featured-event {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featured-image img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .event-card{
+     max-width: 400px;
+  }
+
+  .event-grid {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(1, minmax(250px, 320px));
+
+  gap: 30px;
+
+  justify-content: center; 
+  }
+}
