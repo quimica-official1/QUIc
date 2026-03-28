@@ -13,7 +13,7 @@ import AdminProtectedRoute from './components/AdminProtectedRoute';
 import HomePage from './pages/homePage';
 import OurTeam from './pages/ourTeam';
 import Events from './pages/event';
-import Contact from "./pages/contact";
+import Contact from './pages/contact';
 import Quimica25 from "./pages/quimica25";
 import Quimica23 from "./pages/quimica23";
 import Achievements from "./pages/achievements";

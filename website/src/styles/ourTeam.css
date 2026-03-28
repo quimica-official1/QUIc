@@ -186,12 +186,6 @@
 }
 
 
-
-
-
-
-
-
 .team-container {
   display: flex;
   justify-content: center;
@@ -306,10 +300,12 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
   .team-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+
+
 
   .team-hero h1 {
     font-size: 32px;

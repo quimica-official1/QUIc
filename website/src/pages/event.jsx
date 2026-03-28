@@ -107,7 +107,7 @@ const Events = () => {
           </li>
           <li>
             <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
-              Contact
+              Faculty
             </NavLink>
           </li>
         </ul>

@@ -1,164 +1,14 @@
-// import React, { useEffect, useState } from "react";
-// import { NavLink, useNavigate } from "react-router-dom";
-// import "../styles/contact.css";
-// import "../styles/homePage.css";
-
-// // ✅ FontAwesome
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faFacebookF, faLinkedinIn, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-
-// const Contact = () => {
-//   const navigate = useNavigate();
-//   const [menuOpen, setMenuOpen] = useState(false);
-
-//   useEffect(() => {
-//     window.scrollTo(0, 0);
-//   }, []);
-
-//   /* ================= SCROLL REVEAL ================= */
-//   useEffect(() => {
-//     const reveals = document.querySelectorAll(".reveal");
-
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             entry.target.classList.add("active");
-//           }
-//         });
-//       },
-//       {
-//         threshold: 0.15,
-//         rootMargin: "0px 0px -50px 0px",
-//       }
-//     );
-
-//     reveals.forEach((el) => observer.observe(el));
-
-//     return () => {
-//       reveals.forEach((el) => observer.unobserve(el));
-//     };
-//   }, []);
-
-//   return (
-//     <div className="homepage">
-//       {/* ================= NAVBAR ================= */}
-//       <nav className="navbar">
-//         <div className="nav-left">
-//           <img src="/quimicaLogo.png" alt="logo" />
-//           <h2>QUIMICA</h2>
-//         </div>
-
-//         {/* HAMBURGER */}
-//         <div
-//           className={`menu-icon ${menuOpen ? "open" : ""}`}
-//           onClick={() => setMenuOpen(!menuOpen)}
-//         >
-//           ☰
-//         </div>
-
-//         {/* NAV LINKS */}
-//         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-//           <li>
-//             <NavLink to="/" onClick={() => setMenuOpen(false)}>
-//               Home
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink to="/events" onClick={() => setMenuOpen(false)}>
-//               Events
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink to="/ourTeam" onClick={() => setMenuOpen(false)}>
-//               Our Team
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
-//               Contact
-//             </NavLink>
-//           </li>
-//         </ul>
-//       </nav>
-
-//       {/* ================= TEAM HERO ================= */}
-//       <section className="team-hero reveal reveal-top">
-//         <h1>Acknowledgement</h1>
-//         <p>Meet our Professors</p>
-//       </section>
-
-//       {/* ================= TEAM CARDS ================= */}
-//       <section className="team-container">
-//         {[...Array(8)].map((_, index) => (
-//           <div
-//             key={index}
-//             className={`team-card reveal ${
-//               index % 2 === 0 ? "reveal-left" : "reveal-right"
-//             }`}
-//           >
-//             <div className="card-inner">
-//               <div className="card-front">
-//                 <img src="/quimicaLogo.png" alt="Member" />
-//                 <h3>Name</h3>
-//                 <p designation</p>
-//               </div>
-//               <div className="card-back">
-//                 <h3>Name</h3>
-//                 <p designation</p>
-//                 <p>Lorem ipsum dolor sit amet consectetur.</p>
-//                 <a href="#" className="linkedin-icon">
-//                   <FontAwesomeIcon icon={faLinkedinIn} />
-//                 </a>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </section>
-
-//       {/* ================= FOOTER ================= */}
-//       <footer className="footer" id="contact">
-//         <div className="footer-left">
-//           <img src="/quimicaLogo.png" alt="logo" />
-//           <h4>CHEMICAL ENGINEERING SOCIETY</h4>
-//           <p>Department of Chemical Engineering</p>
-//           <p>BIT Sindri, Dhanbad</p>
-//         </div>
-
-//         <div className="footer-center">
-//           <h4>FOLLOW</h4>
-//           <div className="social-icons">
-//             <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-//             <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-//             <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-//             <a href="#"><FontAwesomeIcon icon={faXTwitter} /></a>
-//           </div>
-//         </div>
-
-//         <div className="footer-right">
-//           <h4>CONTACT US</h4>
-//           <p>BIT Sindri</p>
-//           <p>Dhanbad, India - 721302</p>
-//           <p>Phone: +91-3222-255221</p>
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// };
-
-// export default Contact;
-
 
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import "../styles/contact.css";
+import "../styles/faculty.css";
 import "../styles/homePage.css";
 
 // ✅ FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faLinkedinIn, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
-const Contact = () => {
+const Faculty = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -244,7 +94,7 @@ const Contact = () => {
 
       {/* ================= HERO ================= */}
       <section className="team-hero reveal reveal-top">
-        <h1>Acknowledgement</h1>
+        <h1>Our Faculty</h1>
         <p>Meet our Professors</p>
       </section>
 
@@ -301,4 +151,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Faculty;
