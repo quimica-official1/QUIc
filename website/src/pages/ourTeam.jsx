@@ -73,7 +73,7 @@ const OurTeam = () => {
     { name: "PRIYANSHI KUMARI", batch: "2k24", image: "/assets/team24/priyanshi.jpg", linkedIn: "https://www.linkedin.com/in/priyanshi-kumari-9b94a2276/" },
     { name: "RAHUL KUMAR", batch: "2k24", image: "/assets/team24/rahul.jpeg", linkedIn: "https://www.linkedin.com/in/rahul-kumar-419bbb333/" },
     { name: "RAJ KRISHNA VATS", batch: "2k24", image: "/assets/team24/raj.jpg", linkedIn: "https://www.linkedin.com/in/rajvats2028/" },
-    { name: "RAVI KUMAR MAHATO", batch: "2k24", image: "/assets/team24/ravi.png", linkedIn: "https://www.linkedin.com/in/ravi-kumar-b5a1b230a/" },
+    { name: "RAVI KUMAR", batch: "2k24", image: "/assets/team24/ravi.png", linkedIn: "https://www.linkedin.com/in/ravi-kumar-b5a1b230a/" },
     { name: "ROSHAN PANDIT", batch: "2k24", image: "/assets/team24/roshan.png", linkedIn: "" },
   ];
 
