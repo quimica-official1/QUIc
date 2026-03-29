@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ClerkProvider } from '@clerk/clerk-react';
+import { Analytics } from "@vercel/analytics/react";
 
 // Context
 import { AuthProvider } from './context/AuthContext';
@@ -83,6 +84,7 @@ root.render(
           <Route path="/admin/dashboard" element={<AdminProtectedRoute><AdminDashboard /></AdminProtectedRoute>} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </AuthProvider>
   </ClerkProvider>
 );
