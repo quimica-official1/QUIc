@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ClerkProvider } from '@clerk/clerk-react';
 
 // Context
 import { AuthProvider } from './context/AuthContext';
@@ -22,6 +23,7 @@ import Achievements from "./pages/achievements";
 // Auth pages
 import Register from './pages/register';
 import SignIn from './pages/signin';
+import VerifyEmail from './pages/otpVerify';
 import ForgotPassword from './pages/forgotPassword';
 
 // Protected event pages
@@ -36,6 +38,12 @@ import QuantumUid from './pages/quantumUid';
 import AdminLogin from './pages/adminLogin';
 import AdminDashboard from './pages/adminDashboard';
 
+const CLERK_PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!CLERK_PUBLISHABLE_KEY) {
+  console.error('Missing VITE_CLERK_PUBLISHABLE_KEY in .env.local');
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AuthProvider>
@@ -49,11 +57,11 @@ root.render(
         <Route path="/quimica23" element={<Quimica23 />} />
         <Route path="/quimica25" element={<Quimica25 />} />
         <Route path="/achievements" element={<Achievements />} />
-        <Route path="/newsletter" element={<Newsletter />} />
 
         {/* Auth */}
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* Protected — Quimica26 events */}
@@ -70,4 +78,5 @@ root.render(
       </Routes>
     </BrowserRouter>
   </AuthProvider>
+  </ClerkProvider >
 );
