@@ -23,10 +23,10 @@ app.use(cors({
   methods: ['POST'],
 }));
 
-// Multer — 5MB limit
+// Multer — 10MB limit
 const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5 MB
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
 });
 
 // R2 client (S3-compatible)
