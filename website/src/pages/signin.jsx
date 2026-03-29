@@ -100,7 +100,7 @@ const SignIn = () => {
         if (factor) {
           await signIn.prepareFirstFactor({ strategy: 'email_code', emailAddressId: factor.emailAddressId });
           setMfaRequired(true);
-          setError('Clerk requires email verification. A code has been sent to your email.');
+          setError(''); // Clear errors for smooth transition
         } else {
           setError(`Additional verification required. Clerk requires: ${JSON.stringify(result.supportedFirstFactors)}`);
         }
@@ -110,7 +110,7 @@ const SignIn = () => {
           await signIn.prepareSecondFactor({ strategy: 'email_code', emailAddressId: factor.emailAddressId });
         }
         setMfaRequired(true);
-        setError('MFA requested by Clerk. A code has been sent to your email.');
+        setError(''); // Clear errors for smooth transition
       } else {
         setError('Sign in failed. Please try again.');
       }
