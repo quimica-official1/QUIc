@@ -52,7 +52,7 @@ const OurTeam = () => {
     { name: "ROSHNI KUMARI", batch: "2k23", image: "/assets/team23/roshnimam.jpg", linkedIn: "https://www.linkedin.com/in/roshni-kumari-8408182a7/" },
     { name: "SACHIN KARMALI", batch: "2k23", image: "/assets/team23/sachinsir.jpeg", linkedIn: "https://www.linkedin.com/in/sachin-karmali-19ab55290/" },
     { name: "SAMBHAV PRATAP SINGH", batch: "2k23", image: "/assets/team23/sambhavsir.jpeg", linkedIn: "https://www.linkedin.com/in/sambhav-pratap-singh-0b4b86290/" },
-    { name: "SANSKAR SINGH RAJ", batch: "2k23", image: "/assets/team23/sanskarsir.jpeg", linkedIn: "https://www.linkedin.com/in/sanskar-raj-singh-4577172a3/" },
+    { name: "SANSKAR RAJ SINGH", batch: "2k23", image: "/assets/team23/sanskarsir.jpeg", linkedIn: "https://www.linkedin.com/in/sanskar-raj-singh-4577172a3/" },
     { name: "SATISH KUMAR SAH", batch: "2k23", image: "/assets/team23/satishsir.jpg", linkedIn: "https://www.linkedin.com/in/satishsah9944/" },
     { name: "SUJAL KUMAR", batch: "2k23", image: "/assets/team23/sujalsir.jpg", linkedIn: "https://www.linkedin.com/in/sujal-kumar-48b60b290/" },
   ];

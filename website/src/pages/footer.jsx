@@ -40,8 +40,9 @@ import {
 
         <div className="footer-right">
           <h4>CONTACT US</h4>
-          <h3>KARTIK KUMAR <h5>+91 9142779272</h5></h3>
-          <h3>RAJ KUMAR BARNWAL <h5>+91 7667010887</h5></h3>
+          <p>KARTIK KUMAR (2K22) <p> +91 9142779272</p></p>
+          <p>BABAN KUMAR GUPTA (2K23) <p>+91 7667010887</p></p>
+          <p>PRAJJWAL JHA (2K24) <p>+91 7667010887</p></p>
         </div>
       </footer>
     </div>
