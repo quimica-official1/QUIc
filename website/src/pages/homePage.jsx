@@ -11,7 +11,7 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-const HomePage = () => {
+  const HomePage = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,6 +38,7 @@ const HomePage = () => {
           <li><NavLink to="/events">Events</NavLink></li>
           <li><NavLink to="/ourTeam">Our Team</NavLink></li>
           <li><NavLink to="/contact">Faculty</NavLink></li>
+          <li><NavLink to="/newsletter">Newsletter</NavLink></li>
         </ul>
       </nav>
 
@@ -45,7 +46,6 @@ const HomePage = () => {
       <section className="hero" id="home">
         <div className="hero-left">
           <div className="bit-pill">B.I.T SINDRI</div>
-
           <h1 className="title">
             <span>QUIMICA</span> 2026
           </h1>

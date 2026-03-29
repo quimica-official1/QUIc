@@ -16,6 +16,7 @@ import Events from './pages/event';
 import Contact from './pages/contact';
 import Quimica25 from "./pages/quimica25";
 import Quimica23 from "./pages/quimica23";
+import Newsletter from "./pages/newsletter";
 import Achievements from "./pages/achievements";
 
 // Auth pages
@@ -48,6 +49,7 @@ root.render(
         <Route path="/quimica23" element={<Quimica23 />} />
         <Route path="/quimica25" element={<Quimica25 />} />
         <Route path="/achievements" element={<Achievements />} />
+        <Route path="/newsletter" element={<Newsletter />} />
 
         {/* Auth */}
         <Route path="/register" element={<Register />} />
