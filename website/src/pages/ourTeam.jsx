@@ -63,8 +63,8 @@ const OurTeam = () => {
     { name: "ASHIKA KUMARI", batch: "2k24", image: "/assets/team24/ashika.jpeg", linkedIn: "https://www.linkedin.com/in/ashika-kumari-638b81338/" },
     { name: "KUMARI SHALINI", batch: "2k24", image: "/assets/team24/shalini.jpeg", linkedIn: "https://www.linkedin.com/in/kumari-shalini-505146325/" },
     { name: "MOHIT KUMAR", batch: "2k24", image: "/assets/team24/mohit.jpeg", linkedIn: "https://www.linkedin.com/in/mohit-kumar-baa375335/" },
-    { name: "NEEL RAJ GUPTA", batch: "2k24", image: "/assets/team24/neel.jpg", linkedIn: "https://www.linkedin.com/in/neel-raj-gupta-b6b4b633a/" },
-    { name: "NIKHIL JAMES LAKRA", batch: "2k24", image: "/assets/team24/nikhilj.jpeg", linkedIn: "" },
+    { name: "NEEL RAJ GUPTA", batch: "2k24", image: "/assets/team24/neel.jpeg", linkedIn: "https://www.linkedin.com/in/neel-raj-gupta-b6b4b633a/" },
+    { name: "NIKHIL JAMES LAKRA", batch: "2k24", image: "/assets/team24/nikhilj.jpeg", linkedIn: "https://www.linkedin.com/in/nikhil-lakra-b2612b32a/" },
     { name: "NIKHIL KUMAR MAHATO", batch: "2k24", image: "/assets/team24/nikhilm.jpeg", linkedIn: "https://www.linkedin.com/in/nikhil-m-432002307/" },
     { name: "PRAJJWAL JHA", batch: "2k24", image: "/assets/team24/prajjwal.jpg", linkedIn: "https://www.linkedin.com/in/prajjwal-jha-98476133b/" },
     { name: "PRATIBHAA KUMARI", batch: "2k24", image: "/assets/team24/pratibhaa.jpg", linkedIn: "https://www.linkedin.com/in/pratibha-kumari-ab7306267/" },
@@ -72,9 +72,9 @@ const OurTeam = () => {
     { name: "PRIYA KUMARI", batch: "2k24", image: "/assets/team24/priya.jpeg", linkedIn: "https://www.linkedin.com/in/priya-kumari-a26aa8315/" },
     { name: "PRIYANSHI KUMARI", batch: "2k24", image: "/assets/team24/priyanshi.jpg", linkedIn: "https://www.linkedin.com/in/priyanshi-kumari-9b94a2276/" },
     { name: "RAHUL KUMAR", batch: "2k24", image: "/assets/team24/rahul.jpeg", linkedIn: "https://www.linkedin.com/in/rahul-kumar-419bbb333/" },
-    { name: "RAJ KRISHNA VATS", batch: "2k24", image: "/assets/team24/raj.jpg", linkedIn: "https://www.linkedin.com/in/rajvats2028/" },
+    { name: "RAJ KRISHNA VATS", batch: "2k24", image: "/assets/team24/raj.jpeg", linkedIn: "https://www.linkedin.com/in/rajvats2028/" },
     { name: "RAVI KUMAR", batch: "2k24", image: "/assets/team24/ravi.png", linkedIn: "https://www.linkedin.com/in/ravi-kumar-b5a1b230a/" },
-    { name: "ROSHAN PANDIT", batch: "2k24", image: "/assets/team24/roshan.png", linkedIn: "" },
+    { name: "ROSHAN PANDIT", batch: "2k24", image: "/assets/team24/roshan.png", linkedIn: "https://www.linkedin.com/in/roshan-kumar-6a1878313/" },
   ];
 
   /* ================= SCROLL REVEAL ================= */

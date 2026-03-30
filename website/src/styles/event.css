@@ -114,9 +114,9 @@
   padding: 0 20px 0 100px;  /* 🔥 added left space */
 }
 
-.featured-image img {
-  width: 240px !important;
-  height: 240px !important;
+.featured-event .featured-image img {
+  width: 280px !important;
+  height: 280px !important;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 122, 0, 0.4);
@@ -177,7 +177,7 @@
 }
 
 /* 🔥 FINAL FIX FOR IMAGE SIZE */
-.event-card img {
+.event-grid .event-card img {
   width: 220px !important;
   height: 220px !important;
   object-fit: cover;

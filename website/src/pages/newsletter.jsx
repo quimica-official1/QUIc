@@ -140,6 +140,13 @@ useEffect(() => {
             link.href = "/files/brochure26.pdf";
             link.download = "QUIMICA_Brochure.pdf";
             link.click();}}>Download</button>
+          <button onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/files/brochure26.pdf";
+            link.target = "_blank";
+            link.click();
+           }}> Open Document
+          </button>
         </div>
       </section>
 
@@ -157,6 +164,13 @@ useEffect(() => {
             link.href = "/files/brochure25.pdf";
             link.download = "QUIMICA_Brochure.pdf";
             link.click();}}>Download</button>
+          <button onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/files/brochure26.pdf";
+            link.target = "_blank";
+            link.click();
+           }}> Open Document
+          </button>
         </div>
       </section>
 
@@ -174,6 +188,13 @@ useEffect(() => {
             link.href = "/files/brochure24.pdf";
             link.download = "QUIMICA_Brochure.pdf";
             link.click();}}>Download</button>
+          <button onClick={() => {
+            const link = document.createElement("a");
+            link.href = "/files/brochure26.pdf";
+            link.target = "_blank";
+            link.click();
+           }}> Open Document
+          </button>
         </div>
       </section>
 

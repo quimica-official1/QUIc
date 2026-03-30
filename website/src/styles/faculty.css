@@ -261,13 +261,31 @@
 
 /* ✅ Mobile */
 @media (max-width: 600px) {
-  .team-container {
-    grid-template-columns: 1fr;
-  }
-
   .team-hero h1 {
     font-size: 32px;
   }
+
+  .team-container {
+  grid-template-columns: 1fr;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 80px 60px;
+}
+
+  .team-container .team-card {
+  width: 120px;
+  height: 280px;
+  perspective: 1000px;
+  box-shadow: 0 0 25px rgba(255, 122, 0, 0.6);
+}
+
+.linkedin-icon {
+  width: 32px;
+  height: 32px;
+}
+
 }
 
 /* ❌ Laptop/Desktop → Default (NOT centered) */

@@ -18,6 +18,65 @@
   margin-bottom: 10px;
 }
 
+/* Container styling */
+.footer-center {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif; /* Replace with your project font */
+}
+
+.footer-center h4 {
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  color: #F97316; /* Dark gray for the title */
+  font-size: 1.2rem;
+}
+
+/* Flexbox layout for the icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Spacing between icons */
+}
+
+/* Base style for the icon links */
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Makes them circular */
+  background-color: #f0f0f0;
+  color: #555;
+  font-size: 1.2rem;
+  transition: all 0.3s ease; /* Smooth hover transition */
+  text-decoration: none;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+  transform: translateY(-5px); /* Lift up effect */
+  color: #fff;
+}
+
+/* Brand-specific colors on hover */
+.social-icons a[href*="facebook.com"]:hover {
+  background-color: #1877F2;
+}
+
+.social-icons a[href*="linkedin.com"]:hover {
+  background-color: #0077B5;
+}
+
+.social-icons a[href*="instagram.com"]:hover {
+  background-color: #E4405F;
+}
+
+.social-icons a[href*="x.com"]:hover {
+  background-color: #000000;
+}
+
 
 .footer-right {
   margin-right: 5%;
