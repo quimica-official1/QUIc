@@ -126,7 +126,7 @@ const Quimica26 = () => {
         {/* Quimi Dexter */}
         <div className="q26-card">
           <div className="q26-card-img">
-            <img src="/assets/Q5-01.jpg" alt="Quimi Dexter" />
+            <img src="/assets/Q5-01.jpeg" alt="Quimi Dexter" />
           </div>
           <h3>Quimi Dexter</h3>
           <p>Team-based event. Form a team of 4 and showcase your engineering and industrial prowess.</p>
