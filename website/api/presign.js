@@ -10,9 +10,28 @@ const r2 = new S3Client({
   },
 });
 
+function setCorsHeaders(res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+}
+
 export default async function handler(req, res) {
+  setCorsHeaders(res);
+
+  // Handle preflight
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Verify env vars are present
+  if (!process.env.R2_ACCOUNT_ID || !process.env.R2_ACCESS_KEY_ID || !process.env.R2_SECRET_ACCESS_KEY) {
+    console.error('Missing R2 environment variables');
+    return res.status(500).json({ error: 'Server configuration error: missing storage credentials' });
   }
 
   try {
@@ -44,3 +63,4 @@ export default async function handler(req, res) {
     res.status(500).json({ error: 'Failed to generate presigned URL: ' + error.message });
   }
 }
+
