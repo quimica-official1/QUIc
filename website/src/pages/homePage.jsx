@@ -33,6 +33,8 @@ const HomePage = () => {
           <li><NavLink to="/ourTeam">Our Team</NavLink></li>
           <li><NavLink to="/faculty">Faculty</NavLink></li>
           <li><NavLink to="/newsletter">Newsletter</NavLink></li>
+          <li><NavLink to="/gallery">Gallery</NavLink></li>
+                    <li><NavLink to="/courseStructure">Course Structure</NavLink></li>
         </ul>
       </nav>
 
