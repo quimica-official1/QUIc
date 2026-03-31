@@ -23,6 +23,8 @@ import Quimica25 from "./pages/quimica25";
 import Quimica23 from "./pages/quimica23";
 import Newsletter from "./pages/newsletter";
 import Achievements from "./pages/achievements";
+import Gallery from "./pages/gallery";
+import CourseStructure from "./pages/courseStructure";
 
 // Auth pages
 import Register from './pages/register';
@@ -63,6 +65,8 @@ root.render(
           <Route path="/quimica25" element={<Quimica25 />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/courseStructure" element={<CourseStructure />} />
 
           {/* Auth */}
           <Route path="/register" element={<Register />} />

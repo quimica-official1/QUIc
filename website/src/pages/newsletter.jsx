@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/newsletter.css";
-import "../styles/homePage.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faLinkedinIn, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
   const Newsletter = () => {
   const navigate = useNavigate();
@@ -110,15 +106,6 @@ useEffect(() => {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      {/* <section className="hero">
-        <div className="magazine-header">
-          <h1>Our Exciting magazine</h1>
-        </div>
-        <p>
-          Join us for a series of competitions, workshops, and quizzes designed
-          for chemical engineering enthusiasts!
-        </p>
-      </section> */}
         <section className="team-hero reveal reveal-top">
         <h1>Our Exciting magazine</h1>
         <p>Join us for a series of competitions, workshops, and quizzes designed
@@ -128,7 +115,7 @@ useEffect(() => {
       {/* ================= FEATURED Magazine ================= */}
       <section className="featured-event">
         <div className="featured-image">
-          <img src="/assets/Quimica25.jpg" alt="QUIMICA'25" />
+          <img src="/assets/magazine25.png" alt="Magazine'25" />
         </div>
         <div className="featured-info">
           <h2>NEWSLETTER 2025</h2>
@@ -137,12 +124,12 @@ useEffect(() => {
             to push our concepts and analytical thinking.
           </p>
           <button onClick={() => {const link = document.createElement("a");
-            link.href = "/files/brochure26.pdf";
-            link.download = "QUIMICA_Brochure.pdf";
+            link.href = "/assets/magazine25.pdf";
+            link.download = "QUIMICA_Magazine25.pdf";
             link.click();}}>Download</button>
           <button onClick={() => {
             const link = document.createElement("a");
-            link.href = "/files/brochure26.pdf";
+            link.href = "/assets/magazine25.pdf";
             link.target = "_blank";
             link.click();
            }}> Open Document
@@ -152,7 +139,7 @@ useEffect(() => {
 
       <section className="featured-event">
         <div className="featured-image">
-          <img src="/assets/Quimica23.jpg" alt="QUIMICA'23" />
+          <img src="/assets/magazine24.png" alt="magazine25" />
         </div>
         <div className="featured-info">
           <h2>NEWSLETTER 2024</h2>
@@ -161,12 +148,12 @@ useEffect(() => {
             to push our concepts and analytical thinking.
           </p>
           <button onClick={() => {const link = document.createElement("a");
-            link.href = "/files/brochure25.pdf";
-            link.download = "QUIMICA_Brochure.pdf";
+            link.href = "/assets/magazine2024.pdf";
+            link.download = "QUIMICA_Magazine24.pdf";
             link.click();}}>Download</button>
           <button onClick={() => {
             const link = document.createElement("a");
-            link.href = "/files/brochure26.pdf";
+            link.href = "/assets/magazine2024.pdf";
             link.target = "_blank";
             link.click();
            }}> Open Document
@@ -176,7 +163,7 @@ useEffect(() => {
 
             <section className="featured-event">
         <div className="featured-image">
-          <img src="/assets/Quimica23.jpg" alt="QUIMICA'23" />
+          <img src="/assets/magazine23.png" alt="magazine25" />
         </div>
         <div className="featured-info">
           <h2>NEWSLETTER 2023</h2>
@@ -185,12 +172,12 @@ useEffect(() => {
             to push our concepts and analytical thinking.
           </p>
           <button onClick={() => {const link = document.createElement("a");
-            link.href = "/files/brochure24.pdf";
-            link.download = "QUIMICA_Brochure.pdf";
+            link.href = "/assets/magazine23.pdf";
+            link.download = "QUIMICA_Magazine23.pdf";
             link.click();}}>Download</button>
           <button onClick={() => {
             const link = document.createElement("a");
-            link.href = "/files/brochure26.pdf";
+            link.href = "/assets/magazine23.pdf";
             link.target = "_blank";
             link.click();
            }}> Open Document

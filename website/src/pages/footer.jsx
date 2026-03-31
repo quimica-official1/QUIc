@@ -10,6 +10,7 @@ import {
   faLinkedinIn,
   faInstagram,
   faXTwitter,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
 
@@ -35,6 +36,7 @@ import {
             <a href="https://www.linkedin.com/company/quimica-bit-sindri/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
             <a href="https://www.instagram.com/quimicabits_blog/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
             <a href="https://x.com/Quimica_BITS" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faXTwitter} /></a>
+            <a href="https://youtube.com/@quimicabits8163?si=sOpy-RqfbDC3RhOO" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
           </div>
         </div>
 

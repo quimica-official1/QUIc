@@ -78,6 +78,10 @@
   background-color: #000000;
 }
 
+.social-icons a[href*="youtube.com"]:hover {
+  background-color: #b70a0a;
+}
+
 
 .footer-right {
   margin-right: 5%;
