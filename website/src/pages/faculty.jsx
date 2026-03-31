@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/faculty.css";
-import "../styles/homePage.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
 

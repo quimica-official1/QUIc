@@ -16,70 +16,69 @@ const CourseStructure = () => {
     {
       title: "FIRST SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem1.jpg",
     },
     {
       title: "SECOND SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem2.jpg",
     },
     {
       title: "THIRD SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem3.jpg",
     },
     {
       title: "FOURTH SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem4.jpg",
     },
     {
       title: "FIFTH SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem5.jpg",
     },
     {
       title: "SIXTH SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem6.jpg",
     },
     {
       title: "SEVENTH SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem7.jpg",
     },
     {
       title: "EIGHTH SEMESTER",
       description: "Solve real-world chemical engineering problems in teams.",
-      pdf: "/assets/Innoverse.jpg",
+      image: "/assets/sem28.jpg",
     },
   ];
 
   return (
-    <div className="events-page">
+    <div className="course-page">
       {/* ================= NAVBAR ================= */}
       <Navbar />
 
       <section className="team-hero reveal reveal-top">
-        <h1>Our Exciting Events</h1>
-        <p>Join us for a series of competitions, workshops, and quizzes designed
-          for chemical engineering enthusiasts!</p>
+        <h1>Course Structure | NEP SYLLABUS |</h1>
+        <p>Explore semester-wise journey designed for chemical engineering
+          enthusiasts.</p>
       </section>
 
       {/* ================= FEATURED EVENTS ================= */}
 
-      <section id="allevents">
+      <section id="allcourses">
         <h1>COURSE STRUCTURE</h1>
       </section>
 
-      <section className="event-grid">
-        {course.map((event, idx) => (
-          <div className="event-card" key={idx}>
-            <img src={event.image} alt={event.title} />
-            <h4>{event.title}</h4>
-            <p>{event.description}</p>
-          </div>
-        ))}
+      <section className="course-images">
+        {course.map((item, idx) => (
+        <div className="course-card" key={idx}>
+          <img src={item.image} alt={item.title} />
+          <h4>{item.title}</h4>
+    </div>
+  ))}
       </section>
 
       {/* ================= FOOTER ================= */}

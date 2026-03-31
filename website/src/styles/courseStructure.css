@@ -1,0 +1,200 @@
+
+
+/* ================= PAGE ================= */
+.course-page {
+  background: #050505;
+  min-height: 100vh;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= HERO ================= */
+.course-page .team-hero {
+  position: relative;
+  margin-top: 60px;
+  padding: 90px 20px;
+  text-align: center;
+  color: white;
+
+  /* base dark background */
+  background: #050505;
+
+  /* smooth gradient glow */
+  background-image: 
+    radial-gradient(circle at center, rgba(255,120,0,0.15), transparent 60%),
+    linear-gradient(to bottom, #0a0502 0%, #050505 100%);
+}
+
+/* subtle fade at bottom */
+.course-page .team-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+
+  background: linear-gradient(to bottom, transparent, #050505);
+}
+
+/* HEADING */
+.course-page .team-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* SUBTEXT */
+.course-page .team-hero p {
+  font-size: 18px;
+  opacity: 0.75;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.course-page .team-hero {
+  text-align: center;
+  margin-top: 60px;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #0e0601, #050200);
+  color: white;
+}
+
+.course-page .team-hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.course-page .team-hero p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+
+/* ================= TITLE ================= */
+#allcourses {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ================= COLUMN LAYOUT ================= */
+.course-images {
+  width: 100%;
+  max-width: 1100px;   /* controls max size on large screens */
+  margin: 60px auto;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* space between images */
+}
+
+/* ================= CARD ================= */
+.course-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ================= IMAGE ================= */
+.course-card img {
+  width: 100%;
+  max-width: 1000px;   /* big but controlled */
+  height: auto;        /* 🔥 keeps original ratio */
+  object-fit: cover;
+
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+/* hover effect */
+.course-card img:hover {
+  transform: scale(1.03);
+}
+
+/* ================= TITLE ================= */
+.course-card h4 {
+  margin-top: 12px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* ================= OVERLAY ================= */
+.hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.team-card:hover .hover-overlay {
+  opacity: 1;
+}
+
+/* ================= TEXT CENTER ================= */
+.teamtext {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= ANIMATION ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left {
+  transform: translateX(-80px);
+}
+
+.reveal-right {
+  transform: translateX(80px);
+}
+
+.reveal-top {
+  transform: translateY(-80px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .team-hero h1 {
+    font-size: 30px;
+  }
+
+  .course-images {
+    gap: 30px;
+  }
+
+  .course-card img {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-hero h1 {
+    font-size: 24px;
+  }
+
+  .course-card h4 {
+    font-size: 16px;
+  }
+}

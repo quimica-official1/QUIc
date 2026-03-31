@@ -98,7 +98,7 @@ const OurTeam = () => {
   }, []);
 
   return (
-    <div className="homepage">
+    <div className="ourTeam">
       {/* ================= NAVBAR ================= */}
       <Navbar />
 

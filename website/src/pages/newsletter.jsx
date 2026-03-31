@@ -39,48 +39,7 @@ useEffect(() => {
     checkRegistrations();
   }, []);
 
-  const checkRegistrations = async () => {
-    if (!userProfile) return;
 
-    // Check Quimi Dexter team
-    const { data: teams } = await supabase
-      .from('quimi_dexter_teams')
-      .select('team_id')
-      .or(`leader_email.eq.${userProfile.email},member1_email.eq.${userProfile.email},member2_email.eq.${userProfile.email},member3_email.eq.${userProfile.email}`);
-
-    if (teams && teams.length > 0) setHasTeam(true);
-
-    // Check Quantum registration
-    const { data: quantum } = await supabase
-      .from('quantum_registrations')
-      .select('uid')
-      .eq('user_email', userProfile.email);
-
-    if (quantum && quantum.length > 0) setHasQuantum(true);
-
-    setLoading(false);
-  };
-
-  const handleQuimiDexterRegister = () => {
-    if (hasTeam) {
-      navigate('/quimica26/quimi-dexter/team-id');
-    } else {
-      navigate('/quimica26/quimi-dexter/register');
-    }
-  };
-
-  const handleQuantumRegister = () => {
-    if (hasQuantum) {
-      navigate('/quimica26/quantum/uid');
-    } else {
-      navigate('/quimica26/quantum/register');
-    }
-  };
-
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/');
-  };
   useEffect(() => {
   window.scrollTo(0, 0);
 

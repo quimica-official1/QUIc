@@ -26,23 +26,47 @@
 
 
 
-.team-hero {
-  text-align: center;
-  margin-top: 60px;
-  padding: 100px 20px;
-  background: linear-gradient(135deg, #0e0601, #050200);
-  color: white;
+/* ================= HERO ================= */
+.events-page .team-hero {
+    position: relative;
+    margin-top: 60px;
+    padding: 90px 20px;
+    text-align: center;
+    color: white;
+    background: #050505; background-image: 
+      radial-gradient(circle at center, rgba(255,120,0,0.15), transparent 60%),
+      linear-gradient(to bottom, #0a0502 0%, #050505 100%);
+  }
+
+/* subtle fade at bottom */
+.events-page .team-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+
+  background: linear-gradient(to bottom, transparent, #050505);
 }
 
-.team-hero h1 {
+/* HEADING */
+.events-page .team-hero h1 {
   font-size: 48px;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
-.team-hero p {
+/* SUBTEXT */
+.events-page .team-hero p {
   font-size: 18px;
-  opacity: 0.8;
+  opacity: 0.75;
+  max-width: 700px;
+  margin: 0 auto;
 }
+
+
 .reveal {
   opacity: 0;
   transform: translateY(60px);
