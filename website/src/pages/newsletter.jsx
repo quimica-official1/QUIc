@@ -12,26 +12,28 @@ import Footer from "./footer";
     window.scrollTo(0, 0);
   }, []);
 
-  const magazine = [
-    {
-      title: "INNOVERSE",
-      date: "March 11, 2026",
-      description: "Solve real-world chemical engineering problems in teams.",
-      image: "/assets/Innoverse.jpg",
-    },
-    {
-      title: "SMARTSCAPE",
-      date: "March 12, 2026",
-      description: "Algorithmic problem-solving competition for enthusiasts.",
-      image: "/assets/Smart_scape.jpg",
-    },
-    {
-      title: "BITS BLOG",
-      date: "March 12, 2026",
-      description: "Algorithmic problem-solving competition for enthusiasts.",
-      image: "/assets/Bits_blog.jpg",
-    },
-  ];
+  const newsletters = [
+  {
+    title: "NEWSLETTER 2025",
+    image: "/assets/magazine25.png",
+    pdf: "/assets/magazine25.pdf",
+    downloadName: "QUIMICA_Magazine25.pdf",
+  },
+  {
+    title: "NEWSLETTER 2024",
+    image: "/assets/magazine24.png",
+    pdf: "/assets/magazine2024.pdf",
+    downloadName: "QUIMICA_Magazine24.pdf",
+  },
+  {
+    title: "NEWSLETTER 2023",
+    image: "/assets/magazine23.png",
+    pdf: "/assets/magazine23.pdf",
+    downloadName: "QUIMICA_Magazine23.pdf",
+  },
+];
+
+
 useEffect(() => {
     window.scrollTo(0, 0);
     checkRegistrations();
@@ -113,77 +115,43 @@ useEffect(() => {
       </section>
 
       {/* ================= FEATURED Magazine ================= */}
-      <section className="featured-event">
-        <div className="featured-image">
-          <img src="/assets/magazine25.png" alt="Magazine'25" />
-        </div>
-        <div className="featured-info">
-          <h2>NEWSLETTER 2025</h2>
-          <p>
-            Test your chemical engineering knowledge in a timed quiz designed
-            to push our concepts and analytical thinking.
-          </p>
-          <button onClick={() => {const link = document.createElement("a");
-            link.href = "/assets/magazine25.pdf";
-            link.download = "QUIMICA_Magazine25.pdf";
-            link.click();}}>Download</button>
-          <button onClick={() => {
-            const link = document.createElement("a");
-            link.href = "/assets/magazine25.pdf";
-            link.target = "_blank";
-            link.click();
-           }}> Open Document
-          </button>
-        </div>
-      </section>
+      {newsletters.map((item, index) => (
+  <section className="featured-event" key={index}>
+    <div className="featured-image">
+      <img src={item.image} alt={item.title} loading="lazy" />
+    </div>
 
-      <section className="featured-event">
-        <div className="featured-image">
-          <img src="/assets/magazine24.png" alt="magazine25" />
-        </div>
-        <div className="featured-info">
-          <h2>NEWSLETTER 2024</h2>
-          <p>
-            Test your chemical engineering knowledge in a timed quiz designed
-            to push our concepts and analytical thinking.
-          </p>
-          <button onClick={() => {const link = document.createElement("a");
-            link.href = "/assets/magazine2024.pdf";
-            link.download = "QUIMICA_Magazine24.pdf";
-            link.click();}}>Download</button>
-          <button onClick={() => {
-            const link = document.createElement("a");
-            link.href = "/assets/magazine2024.pdf";
-            link.target = "_blank";
-            link.click();
-           }}> Open Document
-          </button>
-        </div>
-      </section>
+    <div className="featured-info">
+      <h2>{item.title}</h2>
+      <p>
+        Test your chemical engineering knowledge in a timed quiz designed
+        to push our concepts and analytical thinking.
+      </p>
 
-            <section className="featured-event">
-        <div className="featured-image">
-          <img src="/assets/magazine23.png" alt="magazine25" />
-        </div>
-        <div className="featured-info">
-          <h2>NEWSLETTER 2023</h2>
-          <p>
-            Test your chemical engineering knowledge in a timed quiz designed
-            to push our concepts and analytical thinking.
-          </p>
-          <button onClick={() => {const link = document.createElement("a");
-            link.href = "/assets/magazine23.pdf";
-            link.download = "QUIMICA_Magazine23.pdf";
-            link.click();}}>Download</button>
-          <button onClick={() => {
-            const link = document.createElement("a");
-            link.href = "/assets/magazine23.pdf";
-            link.target = "_blank";
-            link.click();
-           }}> Open Document
-          </button>
-        </div>
-      </section>
+      <button
+        onClick={() => {
+          const link = document.createElement("a");
+          link.href = item.pdf;
+          link.download = item.downloadName;
+          link.click();
+        }}
+      >
+        Download
+      </button>
+
+      <button
+        onClick={() => {
+          const link = document.createElement("a");
+          link.href = item.pdf;
+          link.target = "_blank";
+          link.click();
+        }}
+      >
+        Open Document
+      </button>
+    </div>
+  </section>
+))}
 
 
       {/* ================= FOOTER ================= */}

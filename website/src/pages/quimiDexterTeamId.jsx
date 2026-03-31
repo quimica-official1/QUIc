@@ -65,7 +65,7 @@ const QuimiDexterTeamId = () => {
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>
           <li><NavLink to="/quimica26" onClick={() => setMenuOpen(false)}>Quimica'26</NavLink></li>
-          <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
+          <li><NavLink to="/faculty" onClick={() => setMenuOpen(false)}>Faculty</NavLink></li>
         </ul>
       </nav>
 

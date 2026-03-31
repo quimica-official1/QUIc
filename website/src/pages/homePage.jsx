@@ -34,21 +34,11 @@ const HomePage = () => {
           <li><NavLink to="/faculty">Faculty</NavLink></li>
           <li><NavLink to="/newsletter">Newsletter</NavLink></li>
           <li><NavLink to="/gallery">Gallery</NavLink></li>
-                    <li><NavLink to="/courseStructure">Course Structure</NavLink></li>
+          <li><NavLink to="/courseStructure">Course Structure</NavLink></li>
         </ul>
       </nav>
 
       {/* HERO */}
-
-
-
-
-
-
-
-
-
-
 <section className="hero" id="home">
 
   {/* VIDEO BACKGROUND */}
@@ -97,52 +87,6 @@ const HomePage = () => {
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-      {/* <section className="hero" id="home">
-        <div className="hero-left">
-          <div className="bit-pill">B.I.T SINDRI</div>
-
-          <h1 className="title">
-            <span>QUIMICA</span> 2026
-          </h1>
-
-          <div className="society-pill">
-            Chemical Engineering Society
-          </div>
-
-          <div className="hero-buttons"> */}
-            {/* <button
-              className="primary-btn signin-btn"
-              onClick={() => navigate("/signin")}
-            >
-              SIGN IN
-            </button> */}
-
-            {/* <button
-              className="primary-btn"
-              onClick={() => navigate("/register")}
-            >
-              REGISTER
-            </button>
-          </div>
-        </div> */}
-
-        {/* <div className="hero-right">
-          <div className="poster-box">
-            <img src="/assets/department2.png" alt="BIT Sindri" />
-          </div>
-        </div> */}
-      {/* </section> */}
-
       {/* ABOUT */}
       <section className="about" id="about">
         <h2 className="section-title">ABOUT US</h2>
@@ -184,7 +128,7 @@ const HomePage = () => {
 
     {/* LEFT SIDE → Poster with border */}
     <div className="event-poster moving-border-poster">
-      <img src="/assets/quimica2k26.jpeg" alt="Quimica 25" />
+      <img src="/assets/Quimica26.png" alt="Quimica 25" />
     </div>
 
     {/* RIGHT SIDE → (optional, if you want same layout) */}

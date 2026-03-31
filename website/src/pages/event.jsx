@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/event.css";
-import "../styles/homePage.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faLinkedinIn, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const Events = () => {
   const navigate = useNavigate();
@@ -97,39 +93,13 @@ useEffect(() => {
     <div className="events-page">
       {/* ================= NAVBAR ================= */}
       <Navbar />
-
-      {/* ================= HERO ================= */}
-      {/* <section className="hero">
-        <div className="events-header">
-          <h1>Our Exciting Events</h1>
-          <a href="#allevents" className="all-events-btn">
-            ALL EVENTS
-          </a>
-        </div>
-        <p>
-          Join us for a series of competitions, workshops, and quizzes designed
-          for chemical engineering enthusiasts!
-        </p>
-      </section> */}
             <section className="team-hero reveal reveal-top">
         <h1>Our Exciting Events</h1>
-        <p>          Join us for a series of competitions, workshops, and quizzes designed
+        <p>  Join us for a series of competitions, workshops, and quizzes designed
           for chemical engineering enthusiasts!</p>
       </section>
 
       {/* ================= FEATURED EVENTS ================= */}
-
-
-
-
-
- 
-
-
-
-
-
-
 
       <section className="featured-event">
         <div className="featured-image">
