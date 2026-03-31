@@ -1,203 +1,298 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
 import '../styles/homePage.css';
 import '../styles/quimica26.css';
 import Navbar from "./navbar";
-import Footer from "./footer";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faLinkedinIn, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-
-const Quimica26 = () => {
+const QuimiDexterSubmission = () => {
   const navigate = useNavigate();
-  const { userProfile, signOut } = useAuth();
+  const { userProfile } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hasTeam, setHasTeam] = useState(false);
-  const [hasQuantum, setHasQuantum] = useState(false);
-  const [quantumActive, setQuantumActive] = useState(false);
+  const [team, setTeam] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [file, setFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [dragging, setDragging] = useState(false);
+  const fileInputRef = useRef(null);
 
-  // Scroll reveal effect
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const reveals = document.querySelectorAll(".reveal");
-
-    const handleScroll = () => {
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-          el.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    fetchTeam();
   }, []);
 
-  // Check registrations for events
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    checkRegistrations();
-  }, [userProfile]);
-
-  const checkRegistrations = async () => {
+  const fetchTeam = async () => {
     if (!userProfile) return;
+    const email = userProfile.email;
 
-    // Check Quimi Dexter team
     const { data: teams } = await supabase
       .from('quimi_dexter_teams')
-      .select('team_id')
-      .or(`leader_email.eq.${userProfile.email},member1_email.eq.${userProfile.email},member2_email.eq.${userProfile.email},member3_email.eq.${userProfile.email}`);
+      .select('*')
+      .or(`leader_email.eq.${email},member1_email.eq.${email},member2_email.eq.${email},member3_email.eq.${email}`);
 
-    if (teams && teams.length > 0) setHasTeam(true);
-
-    // Check Quantum registration
-    const { data: quantum } = await supabase
-      .from('quantum_registrations')
-      .select('uid')
-      .eq('user_email', userProfile.email);
-
-    if (quantum && quantum.length > 0) setHasQuantum(true);
-
-    // Fetch Quantum event status
-    const { data: settings } = await supabase
-      .from('app_settings')
-      .select('value')
-      .eq('key', 'quantum_active')
-      .single();
-
-    if (settings && settings.value === true) {
-      setQuantumActive(true);
+    if (teams && teams.length > 0) {
+      setTeam(teams[0]);
+      if (teams[0].draft_url) setSubmitted(true);
+    } else {
+      navigate('/quimica26', { replace: true });
     }
-
     setLoading(false);
   };
 
-  const handleQuimiDexterRegister = () => {
-    if (hasTeam) {
-      navigate('/quimica26/quimi-dexter/team-id');
-    } else {
-      navigate('/quimica26/quimi-dexter/register');
+  const handleFileSelect = (selectedFile) => {
+    setError('');
+    if (!selectedFile) return;
+
+    if (selectedFile.type !== 'application/pdf') {
+      setError('Only PDF files are allowed.');
+      return;
     }
+
+    // 10 MB limit
+    if (selectedFile.size > 10 * 1024 * 1024) {
+      setError('File size exceeds 10 MB limit. Please choose a smaller file.');
+      return;
+    }
+
+    setFile(selectedFile);
   };
 
-  const handleQuantumRegister = () => {
-    if (hasQuantum) {
-      navigate('/quimica26/quantum/uid');
-    } else {
-      navigate('/quimica26/quantum/register');
-    }
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setDragging(false);
+    const droppedFile = e.dataTransfer.files[0];
+    handleFileSelect(droppedFile);
   };
 
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/');
+  const handleUpload = async () => {
+    if (!file || !team) return;
+    setError('');
+    setUploading(true);
+    setProgress(10);
+
+    try {
+      // Simulate progress for presign
+      const progressInterval = setInterval(() => {
+        setProgress((p) => Math.min(p + 10, 40));
+      }, 300);
+
+      // 1. Get presigned URL
+      let presignRes;
+      try {
+        presignRes = await fetch('/api/presign', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            team_id: team.team_id,
+            filename: file.name,
+            contentType: file.type || 'application/pdf',
+          }),
+        });
+      } catch (networkErr) {
+        clearInterval(progressInterval);
+        throw new Error('Network error: Could not reach the server. Please check your internet connection and try again.');
+      }
+
+      if (!presignRes.ok) {
+        clearInterval(progressInterval);
+        const errData = await presignRes.json().catch(() => ({}));
+        throw new Error(errData.error || `Server error (${presignRes.status})`);
+      }
+
+      const { presignedUrl, publicUrl } = await presignRes.json();
+
+      // 2. Upload file directly to R2
+      let uploadRes;
+      try {
+        uploadRes = await fetch(presignedUrl, {
+          method: 'PUT',
+          headers: { 'Content-Type': file.type || 'application/pdf' },
+          body: file,
+        });
+      } catch (uploadNetworkErr) {
+        clearInterval(progressInterval);
+        throw new Error('Upload failed: Could not connect to storage. Please try again.');
+      }
+
+      clearInterval(progressInterval);
+
+      if (!uploadRes.ok) {
+        throw new Error('Upload to storage failed');
+      }
+
+      setProgress(90);
+
+      // 3. Update team record with draft URL
+      const { error: updateError } = await supabase
+        .from('quimi_dexter_teams')
+        .update({
+          draft_url: publicUrl,
+          draft_submitted_at: new Date().toISOString(),
+        })
+        .eq('team_id', team.team_id);
+
+      if (updateError) throw updateError;
+
+      setProgress(100);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || 'Upload failed. Please try again.');
+      console.error(err);
+    }
+
+    setUploading(false);
   };
+
+  const formatSize = (bytes) => {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+  };
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-spinner"></div>
+        <p>Loading...</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="q26-page">
+    <div className="submission-page">
       {/* NAVBAR */}
-      <Navbar />
+      <nav className="navbar">
+        <div className="nav-left">
+          <img src="/quimicaLogoWhite.png" alt="logo" />
+          <h2>QUIMICA</h2>
+        </div>
+        <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>☰</div>
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <li><NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink></li>
+          <li><NavLink to="/quimica26" onClick={() => setMenuOpen(false)}>Quimica'26</NavLink></li>
+          <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
+        </ul>
+      </nav>
 
-      {/* User bar */}
-      <div className="q26-user-bar">
-        <span className="q26-user-name">
-          Welcome, <strong>{userProfile?.name || 'User'}</strong>
-        </span>
-        <button className="q26-signout-btn" onClick={handleSignOut}>Sign Out</button>
-      </div>
-
-      {/* Hero */}
-      <section className="q26-hero">
-        <h1>QUIMICA'26</h1>
-        <p>Choose your event and register to participate</p>
-      </section>
-
-      {/* Event Cards */}
-      <section className="q26-events">
-        {/* Quimi Dexter */}
-        <div className="q26-card">
-          <div className="q26-card-img">
-            <img src="/assets/Q5-01.jpeg" alt="Quimi Dexter" />
-          </div>
-          <h3>Quimi Dexter</h3>
-          <p>Team-based event. Form a team of 4 and showcase your engineering and industrial prowess.</p>
-          <div className="q26-card-actions">
-            <button className="q26-btn q26-btn-primary" onClick={handleQuimiDexterRegister}>
-              {hasTeam ? 'View Team ID' : 'Register for Quimi Dexter'}
-            </button>
-            {hasTeam ? (
-              <button
-                className="q26-btn q26-btn-secondary"
-                onClick={() => navigate('/quimica26/quimi-dexter/submission')}
-              >
-                Submit Draft for Quimi Dexter
-              </button>
-            ) : (
-              <button className="q26-btn q26-btn-locked" disabled>
-                <span className="lock-icon">🔒</span>
-                Submit Draft for Quimi Dexter
-              </button>
-            )}
-          </div>
+      <div className="submission-container">
+        <div className="submission-header">
+          <h1>Submit Draft — Quimi Dexter</h1>
+          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
+            Upload your team's draft (max 5 MB)
+          </p>
         </div>
 
-        {/* Quantum */}
-        <div className="q26-card">
-          <div className="q26-card-img" style={{ position: 'relative' }}>
-            {quantumActive ? (
-              <img src=" " alt="Quantum" />
-            ) : (
-              <div style={{
-                position: 'absolute',
-                top: 0, left: 0, right: 0, bottom: 0,
-                backgroundColor: 'rgba(20, 20, 25, 0.85)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontSize: '1.2rem',
-                fontWeight: 'bold',
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                border: '1px dashed rgba(255, 255, 255, 0.2)',
-                zIndex: 2
-              }}>
-                Coming Soon
+        {/* Team Info */}
+        {team && (
+          <div className="submission-info">
+            <div className="submission-info-box">
+              <label>Team Name</label>
+              <p>{team.team_name}</p>
+            </div>
+            <div className="submission-info-box">
+              <label>Team ID</label>
+              <p>{team.team_id}</p>
+            </div>
+          </div>
+        )}
+
+        {submitted ? (
+          <div className="upload-success">
+            <span className="checkmark">✅</span>
+            <h3>Draft Submitted Successfully!</h3>
+            <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '10px' }}>
+              Your draft has been uploaded and linked to your team.
+            </p>
+            <button
+              className="q26-btn q26-btn-secondary"
+              style={{ maxWidth: '300px', margin: '25px auto 0' }}
+              onClick={() => navigate('/quimica26')}
+            >
+              ← Back to Events
+            </button>
+          </div>
+        ) : (
+          <>
+            {error && (
+              <div className="auth-error" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div>
+                  <i className="fas fa-exclamation-circle"></i>
+                  {error}
+                </div>
+                <div style={{ textAlign: 'center', marginTop: '5px', fontSize: '14px' }}>
+                  <strong>Upload Failed ?</strong>{' '}
+                  <a 
+                    href="https://wa.me/916204413032" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    style={{ color: '#ffb347', textDecoration: 'underline' }}
+                  >
+                    Contact Support
+                  </a>
+                </div>
               </div>
             )}
-            {/* Keeping the image underneath if needed, but heavily darkened if not active */}
-            <img src=" " alt="Quantum" style={{ opacity: quantumActive ? 1 : 0.1 }} />
-          </div>
-          <h3>Quantum</h3>
-          <p> Coming Soon </p>
-          <div className="q26-card-actions">
-            {quantumActive ? (
-              <button className="q26-btn q26-btn-primary" onClick={handleQuantumRegister}>
-                {hasQuantum ? 'View Unique ID' : 'Register for Quantum'}
-              </button>
-            ) : (
-              <button className="q26-btn q26-btn-locked" disabled>
-                <span className="lock-icon">🔒</span>
-                Registrations Locked
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
 
-      {/* Footer */}
-      <Footer />
+            {/* Upload Zone */}
+            <div
+              className={`upload-zone ${dragging ? 'dragging' : ''}`}
+              onDrop={handleDrop}
+              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+              onDragLeave={() => setDragging(false)}
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <span className="upload-icon">📄</span>
+              <h4>Drag & drop your file here</h4>
+              <p>or click to browse • Max size: 10 MB</p>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".pdf,application/pdf"
+                onChange={(e) => handleFileSelect(e.target.files[0])}
+              />
+            </div>
+
+            {/* File info */}
+            {file && (
+              <div className="upload-file-info">
+                <div>
+                  <span className="file-name">{file.name}</span>
+                  <span className="file-size"> • {formatSize(file.size)}</span>
+                </div>
+                <button className="remove-file" onClick={() => setFile(null)}>✕</button>
+              </div>
+            )}
+
+            {/* Progress */}
+            {uploading && (
+              <div className="upload-progress">
+                <div className="upload-progress-bar">
+                  <div className="upload-progress-bar-fill" style={{ width: `${progress}%` }}></div>
+                </div>
+                <p style={{ textAlign: 'center', marginTop: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>
+                  Uploading... {progress}%
+                </p>
+              </div>
+            )}
+
+            {/* Submit */}
+            <button
+              className="auth-submit-btn"
+              disabled={!file || uploading}
+              onClick={handleUpload}
+              style={{ marginTop: '20px' }}
+            >
+              {uploading ? 'Uploading...' : 'Submit Draft'}
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 };
 
-export default Quimica26;
+export default QuimiDexterSubmission;
