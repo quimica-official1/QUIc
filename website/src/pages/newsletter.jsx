@@ -36,7 +36,6 @@ import Footer from "./footer";
 
 useEffect(() => {
     window.scrollTo(0, 0);
-    checkRegistrations();
   }, []);
 
 

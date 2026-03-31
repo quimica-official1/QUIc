@@ -64,12 +64,6 @@ img {
 }
 
 
-
-
-
-
-
-
 .title span {
   background: linear-gradient(
     90deg,
@@ -84,13 +78,6 @@ img {
   background-clip: text;
   color: transparent;
 }
-
-
-
-
-
-
-
 
 
 .video-btn {
@@ -229,39 +216,15 @@ img {
   cursor: pointer;
 }
 
-/* ================= HERO ================= */
-/* .hero { */
-  /* padding: 70px 80px; */
-  /* display: flex; */
-  /* justify-content: flex-start; align left */
-  /* align-items: flex-start;     top-aligned */
-  /* gap: 50px; */
-  /* flex-wrap: wrap; */
-  /* width: 100%; */
-/* } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .featured-event {
   display: flex;
   justify-content: center;
+}
+
+.featured-event .event-container .event-poster img{
+    width: 250px;
+    height: 250px;
 }
 
 .featured-event .event-container {
@@ -280,7 +243,7 @@ img {
 }
 /* DOTTED BORDER */
 .moving-border-poster::before {
-    padding: 3px; 
+  padding: 3px; 
   content: "";
   position: absolute;
   inset: 0;

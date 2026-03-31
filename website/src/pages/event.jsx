@@ -101,6 +101,21 @@ useEffect(() => {
 
       {/* ================= FEATURED EVENTS ================= */}
 
+        <section className="featured-event">
+        <div className="featured-image">
+          <img src="/assets/quimica2k26.jpeg" alt="QUIMICA'26" />
+        </div>
+        <div className="featured-info">
+          <h2>QUIMICA'26</h2>
+          <p>
+            Test your chemical engineering knowledge in a timed quiz designed
+            to push our concepts and analytical thinking.
+          </p>
+          <p className="date">April 9&10, 2026</p>
+          <button onClick={() => navigate("/register")}>Register</button>
+        </div>
+      </section>
+
       <section className="featured-event">
         <div className="featured-image">
           <img src="/assets/Quimica25.jpg" alt="QUIMICA'25" />
