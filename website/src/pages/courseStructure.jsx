@@ -15,35 +15,35 @@ const CourseStructure = () => {
   const course = [
     {
       title: "FIRST SEMESTER",
-      image: "/assets/sem1.jpg",
+      image: "/assets/sem1.png",
     },
     {
       title: "SECOND SEMESTER",
-      image: "/assets/sem2.jpg",
+      image: "/assets/sem2.png",
     },
     {
       title: "THIRD SEMESTER",
-      image: "/assets/sem3.jpg",
+      image: "/assets/sem3.png",
     },
     {
       title: "FOURTH SEMESTER",
-      image: "/assets/sem4.jpg",
+      image: "/assets/sem4.png",
     },
     {
       title: "FIFTH SEMESTER",
-      image: "/assets/sem5.jpg",
+      image: "/assets/sem5.png",
     },
     {
       title: "SIXTH SEMESTER",
-      image: "/assets/sem6.jpg",
+      image: "/assets/sem6.png",
     },
     {
       title: "SEVENTH SEMESTER",
-      image: "/assets/sem7.jpg",
+      image: "/assets/sem7.png",
     },
     {
       title: "EIGHTH SEMESTER",
-      image: "/assets/sem28.jpg",
+      image: "/assets/sem8.png",
     },
   ];
 
@@ -73,7 +73,7 @@ const CourseStructure = () => {
       <Navbar />
 
       <section className="team-hero reveal reveal-top">
-        <h1>Course Structure | NEP SYLLABUS |</h1>
+        <h1>Course Structure (NEP SYLLABUS)</h1>
         <p>Explore semester-wise journey designed for chemical engineering
           enthusiasts.</p>
       </section>

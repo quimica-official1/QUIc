@@ -6,7 +6,7 @@ import Footer from "./footer";
 /* 🔥 CONFIG */
 const SECTIONS = [
   {
-    title: "Orientation 25",
+    title: "ORIENTATION 25",
     folder: "Orientation25",
     images: [
       "image1.JPG",
@@ -37,7 +37,7 @@ const SECTIONS = [
     ],
   },
   {
-    title: "Quimica 25",
+    title: "QUIMICA' 25",
     folder: "Quimica25",
     images: [
       "image1.JPG",
@@ -69,7 +69,7 @@ const SECTIONS = [
     ],
   },
   {
-    title: "Quimica 23",
+    title: "QUIMICA' 23",
     folder: "Quimica23",
     images: [
       "image1.jpg",
