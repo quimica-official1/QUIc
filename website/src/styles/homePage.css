@@ -37,6 +37,7 @@ img {
 
 .home .hero-video {
   position: absolute;
+  margin-top: 75px;
   top: 0;
   left: 0;
 
@@ -494,7 +495,7 @@ img {
 
 /* ================= ABOUT ================= */
 .about {
-  margin-top: 15%;
+  margin-top: 22%;
   padding: 80px;
 }
 
@@ -783,7 +784,126 @@ img {
   }
 }
 
+/* SECTION BASE */
+.home .segments {
+  padding: 100px 80px;
+  background: radial-gradient(circle at center, #1a0f08 0%, #000 70%);
+  color: #fff;
+  text-align: center;
+}
 
+/* HEADING */
+.home .segments h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+.home .segments .segments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 90px;
+  margin: 30px;
+}
+
+/* CARD */
+.home .segments .segments-grid .card {
+  background: #050505;
+  border-radius: 18px;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.15);
+  transition: all 0.35s ease;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: #eaeaea;
+}
+
+/* IMAGE */
+.home .segments .segments-grid .card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* HOVER */
+.home .segments .segments-grid .card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 35px rgba(255, 140, 0, 0.35);
+}
+
+/* GLOW BORDER */
+.home .segments .segments-grid .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, rgba(255,140,0,0.4), transparent);
+
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home .segments {
+    padding: 60px 20px;
+    margin: 60px;
+    border-radius: 15px;
+  }
+
+  .home .segments h2 {
+    font-size: 28px;
+  }
+
+  .home .segments .segments-grid .card img {
+    
+  }
+}
+
+@media (max-width: 480px) {
+    .home .segments {
+    padding: 60px 20px;
+    margin: 50px;
+    border-radius: 15px;
+  }
+
+  .home .segments .segments-grid {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home .segments .segments-grid .card {
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home .segments .segments-grid .card img {
+   
+    
+  }
+
+}
 /* ================= DROPDOWN ================= */
 
 .dropdown {

@@ -14,6 +14,18 @@ const Events = () => {
 
   const events = [
     {
+      title: "QUIMI DEXTER",
+      date: "March 11, 2026",
+      description: "Solve real-world chemical engineering problems in teams.",
+      image: "/assets/Quimi_Dexter.jpg",
+    },
+    {
+      title: "QUANTUM",
+      date: "March 11, 2026",
+      description: "Solve real-world chemical engineering problems in teams.",
+      image: "/assets/Quantum.jpg",
+    },
+    {
       title: "INNOVERSE",
       date: "March 11, 2026",
       description: "Solve real-world chemical engineering problems in teams.",
@@ -42,6 +54,18 @@ const Events = () => {
       date: "March 12, 2026",
       description: "Algorithmic problem-solving competition for enthusiasts.",
       image: "/assets/Jeopardy.jpg",
+    },
+    {
+      title: "MESAVENTURE",
+      date: "March 11, 2026",
+      description: "Solve real-world chemical engineering problems in teams.",
+      image: "/assets/Mesaventure.jpg",
+    },
+    {
+      title: "POSTER PRESENTATION COMPETITION",
+      date: "March 11, 2026",
+      description: "Solve real-world chemical engineering problems in teams.",
+      image: "/assets/Poster_Competition.jpg",
     },
     {
       title: "SCINTILLA",
@@ -111,7 +135,7 @@ useEffect(() => {
             Test your chemical engineering knowledge in a timed quiz designed
             to push our concepts and analytical thinking.
           </p>
-          <p className="date">April 9&10, 2026</p>
+          <p className="date">April 10&11, 2026</p>
           {/* <button onClick={() => navigate("/register")}>Register</button> */}
         </div>
       </section>

@@ -207,6 +207,19 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/*Segments*/}
+      <section id="segments" className="segments fade-section">
+        <h2>Our Segments</h2>
+        <div className="segments-grid">
+          <div className="card"><img src="/assets/Behind_the_breakthrough.jpg" alt="" />Behind the Breakthrough</div>
+          <div className="card"><img src="/assets/Then_vs_now.jpg" alt="" />Then vs Now</div>
+          <div className="card"><img src="/assets/chess.png" alt="" />CHESS</div>
+          <div className="card"><img src="/assets/chemshot.png" alt="" />Chemshot</div>
+          <div className="card"><img src="/assets/What_if.jpg" alt="" />What If?</div>
+          <div className="card"><img src="/assets/myth_vs_fact.jpg" alt="" />Myth vs Fact</div>
+        </div>
+      </section>
+
       {/* FOOTER (Using Component) */}
       <Footer />
 

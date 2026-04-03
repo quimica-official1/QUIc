@@ -138,53 +138,67 @@
 
 .event-page .featured-event {
   max-width: 1100px;
-  margin: 50px auto;
+  margin: 80px auto;
   display: flex;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
-
-  padding: 0 20px 0 100px;  /* 🔥 added left space */
+  padding: 0 20px;
+  background: linear-gradient(145deg, rgba(20,10,5,0.6), rgba(0,0,0,0.6));
+  border-radius: 20px;
 }
 
-.event-page .featured-event .featured-image img {
-  width: 280px !important;
-  height: 280px !important;
+.events-page .featured-event .featured-image {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.events-page .featured-event .featured-image img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* 🔥 poster feel */
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 122, 0, 0.4);
+  border-radius: 14px;
+
+  box-shadow: 
+    0 0 25px rgba(255, 122, 0, 0.25),
+    0 10px 40px rgba(0,0,0,0.6);
 }
 
 .event-page .featured-info {
   flex: 1;
 }
 
-.event-page .featured-info h2 {
-  font-size: 1rem;   /* reduced from 2.3rem */
-  margin-bottom: 10px;
+.events-page .featured-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
 }
 
-.event-page .featured-info p {
-  font-size: 0.95rem;  /* reduced */
-  line-height: 1.5;
-  color: rgba(201, 97, 0, 0.825);
+.events-page .featured-info p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 246, 238, 0.75);
 }
-
 .featured-info .date {
   margin-top: 8px;
   font-size: 0.9rem;   /* reduced */
 }
 
-.featured-event .featured-info button {
-  margin-top: 15px;
-  background: linear-gradient(to right, #792E05, #4e290d);
+.events-page .featured-event .featured-info button {
+  margin-top: 20px;
+  background: linear-gradient(to right, #a14a10, #5a2a05);
   border: none;
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1.2rem;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
+
+  transition: all 0.3s ease;
 }
 
+.events-page .featured-event .featured-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 120, 0, 0.4);
+}
 /* ================= GRID ================= */
 
 #allevents {
@@ -237,9 +251,13 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .featured-event {
+  .events-page .featured-event {
     flex-direction: column;
     text-align: center;
+  }
+
+  .events-page .featured-event .featured-image {
+    width: 260px;
   }
 
   .featured-image img {

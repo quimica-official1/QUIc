@@ -74,7 +74,7 @@ useEffect(() => {
 
       {/* ================= FEATURED Magazine ================= */}
       {newsletters.map((item, index) => (
-  <section className="featured-event" key={index}>
+  <section className="featured-magazine" key={index}>
     <div className="featured-image">
       <img src={item.image} alt={item.title} loading="lazy" />
     </div>

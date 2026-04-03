@@ -1,19 +1,7 @@
 
-:root {
-  --bg-color: #062738;
-  --second-bg-color: #373c46;
-  --white-color: #ffffff;
-  --black-colour: #000000;
-  --main-colour: #FB897F;
-  --main-colour-dark: #3c1a17;
-  --green-color: #A2D258;
-  --yellow-color: #F9CB6B;
-  --cyan-color: #96C4B9;
-}
-
 /* HERO */
 
-.hero {
+.magazine-page .hero {
   margin-top: 60px;
   padding: 100px 20px;
   height: 60vh;       
@@ -28,7 +16,7 @@
   margin: 3rem 0;
 }
 
-.team-hero{
+.magazine-page  .team-hero{
   text-align: center;
   margin-top: 60px;
   padding: 80px 20px;
@@ -36,16 +24,41 @@
   color: white;
 }
 
-.hero h1 {
+.magazine-page .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   transition: all 0.5s ease;
 }
 
-.hero p {
+.magazine-page  .hero p {
   color: #555;
   font-size: 1.1rem;
   transition: all 0.5s ease;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+.magazine-page .reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.magazine-page .reveal-left {
+  transform: translateX(-80px);
+}
+
+.magazine-page .reveal-right {
+  transform: translateX(80px);
+}
+
+.magazine-page .reveal-top {
+  transform: translateY(-80px);
+}
+
+.magazine-page .reveal.active {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
 }
 
 /* magazineS HEADER */
@@ -77,7 +90,8 @@
 
 
 /*  magazines   */
-.featured-magazine {
+
+.magazine-page .featured-magazine {
   max-width: 1200px;
   margin: 60px auto;
   display: flex;
@@ -86,12 +100,18 @@
   padding: 0 20px;
 }
 
-.magazine-page .featured-event .featured-image img {
+.magazine-page .featured-magazine .featured-image{
   width: 420px;
-  height: 720px;
+  flex-shrink: 0; /* 🔥 prevents squishing */
+}
+
+.magazine-page .featured-magazine .featured-image img {
+  width: 420px;
+  aspect-ratio: 3 / 5;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(255, 122, 0, 0.6);
+  display: block;
 }
 
 .featured-info {
@@ -116,7 +136,7 @@
   color: #f97316;
 }
 
-.featured-event .featured-info button {
+.featured-magazine .featured-info button {
   margin-top: 25px;
   margin-left: 5px;
   margin-right: 5px;
@@ -131,16 +151,19 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .featured-magazine {
+  .magazine-page .featured-magazine {
     flex-direction: column;
     text-align: center;
   }
 
-  .featured-magazine .featured-image img {
+  .magazine-page .featured-magazine .featured-image {
     width: 300px;
-    height: 400px;
   }
 
+  .magazine-page .featured-magazine .featured-image img {
+    width: 100%;
+    aspect-ratio: 3 / 5; /* 🔥 keep ratio */
+  }
 }
 
 @media (max-width: 780px) {
