@@ -112,7 +112,7 @@ useEffect(() => {
             to push our concepts and analytical thinking.
           </p>
           <p className="date">April 9&10, 2026</p>
-          <button onClick={() => navigate("/register")}>Register</button>
+          {/* <button onClick={() => navigate("/register")}>Register</button> */}
         </div>
       </section>
 
