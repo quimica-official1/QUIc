@@ -4,12 +4,33 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/homePage.css";
 import Footer from "./footer";
+import {  useRef, useEffect } from "react";
+
+
 
 const HomePage = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+
+const dropdownRef = useRef();
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setDropdownOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, []);
+
+
 
   return (
     <div className="home">
@@ -38,15 +59,25 @@ const HomePage = () => {
           {/* <li><NavLink to="/gallery">Gallery</NavLink></li>
           <li><NavLink to="/courseStructure">Course Structure</NavLink></li> */}
 
-<li
-  className={`dropdown ${dropdownOpen ? "active" : ""}`}
-  onClick={() => setDropdownOpen(!dropdownOpen)}
->
-  <span>Others ▾</span>
+<li className="dropdown" ref={dropdownRef}>
+  <button
+    className="dropdown-btn"
+    onClick={() => setDropdownOpen(!dropdownOpen)}
+  >
+    Others ▾
+  </button>
 
-  <ul className="dropdown-menu">
-    <li><NavLink to="/gallery">Gallery</NavLink></li>
-    <li><NavLink to="/courseStructure">Course Structure</NavLink></li>
+  <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
+    <li>
+      <NavLink to="/gallery" onClick={() => setDropdownOpen(false)}>
+        Gallery
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to="/courseStructure" onClick={() => setDropdownOpen(false)}>
+        Course Structure
+      </NavLink>
+    </li>
   </ul>
 </li>
         </ul>
