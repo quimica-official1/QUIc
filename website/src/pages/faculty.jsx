@@ -27,7 +27,7 @@ const Faculty = () => {
     { name: "Dr. Diwakar Pandey", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/DiwakarSir.jpeg", linkedIn: "https://www.linkedin.com/in/diwakar-pandey-b8370078/" },
     { name: "Dr. Abhishek Anand Hembrom", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/AbhishekSir.jpeg", linkedIn: "https://www.linkedin.com/in/dr-abhishek-anand-hembrom-6b2613a1/" },
     { name: "Dr. Ashok Kumar Baranwal", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/AshokSir.jpeg", linkedIn: "https://www.linkedin.com/in/ashok-baranwal-66a8a597/" },
-    { name: "Dr. Nirupama Prasad", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/NirupamaMam.jpeg", linkedIn: "https://www.linkedin.com/in/nirupama-prasad-09b79637a/" },
+    { name: "Dr. Nirupama ", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/NirupamaMam.jpeg", linkedIn: "https://www.linkedin.com/in/nirupama-prasad-09b79637a/" },
     { name: "Dr. Ch. V. Raghunath", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/RaghuSir.jpeg", linkedIn: "https://www.linkedin.com/in/v-raghunath-chelluboyana-7a409728/" },
     { name: "Prof. Pitho Hansda", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/PithoSir.jpeg", linkedIn: "https://www.linkedin.com/in/pitho-hansda-348705138/" },
     { name: "Prof. Devina Ratnam ", designation: "Assistant Professor", batch: "2k22", image: "/assets/proffesors/DevinaMam.png", linkedIn: "https://www.linkedin.com/in/devina-ratnam-077757b8/" },
