@@ -41,7 +41,7 @@ const Quimica25 = () => {
       title: "BITS BLOG",
       date: "March 12, 2026",
       description:
-        "Algorithmic problem-solving competition for enthusiasts.",
+  "A round involving technical paper submission on topics of industrial relevance.",
       image: "/assets/Bits_blog.jpg",
     },
   ];
@@ -51,7 +51,7 @@ const Quimica25 = () => {
       title: "WEBINAR 1",
       date: "March 11, 2026",
       description:
-        "Solve real-world chemical engineering problems in teams.",
+        "A webinar on Entrepreneurial Mindset by eminent professor from IIT Patna. ",
       image: "/assets/Webinar1.jpg",
       watch:
         "https://www.youtube.com/live/QLXe7L4zPFY?si=xU3EZmtc1T5dNiOV",
@@ -60,7 +60,7 @@ const Quimica25 = () => {
       title: "WEBINAR 2",
       date: "March 12, 2026",
       description:
-        "Algorithmic problem-solving competition for enthusiasts.",
+        "A webinar on Role of Chemical Engineering in Gas Processing and Pipeline Management by an industry expert from GAIL.",
       image: "/assets/Webinar2.jpg",
       watch:
         "https://www.youtube.com/live/GGu89CtU638?si=Q9QccnwQwKfOQMqs",
@@ -69,7 +69,7 @@ const Quimica25 = () => {
       title: "WEBINAR 3",
       date: "March 12, 2026",
       description:
-        "Algorithmic problem-solving competition for enthusiasts.",
+        "A webinar on Building research career in Chemical Engineering by an eminent professor from IIT( ISM) Dhanbad.",
       image: "/assets/Webinar3.jpg",
       watch:
         "https://www.youtube.com/live/A2KqB_uAsWw?si=ls5OTko7I3T7M1Q8",
