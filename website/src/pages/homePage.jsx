@@ -146,18 +146,18 @@ useEffect(() => {
 
           <div className="about-text-box">
             <p>
-              Quimica is the annual technical Colloquium and an extended branch
-              of the Chemical Engineering Department's student body.
+             Quimica is the official branch society of the Chemical Engineering Department, which also hosts an annual technical 
+              colloquium.
             </p>
 
             <p>
-              The foundation of this organization was laid by ambitious students
-              and now includes Professors, Alumni, and Professionals.
+              Foundation by ambitious students, the organization has since grown to include
+              professors, alumni, and industry professionals.
             </p>
 
             <p>
-              Significant events include Shaastra, Tech Kriti, Advaita,
-              Scintilla, and career seminars.
+              Its significant events in the past were innoverse, SmartScape, EllementaX, Jeopardy, Shastra, Tech Kriti, Advaita
+              and various career seminars.
             </p>
           </div>
         </div>
@@ -202,8 +202,8 @@ useEffect(() => {
           <div className="event-details">
             <h3>QUIMICA'25</h3>
             <p>
-              The Chemical Engineering Society organizes an annual technical
-              extravaganza at BIT Sindri.
+             The competition pushed participants to their limits with a fast-paced competitions on engineering fundamentals. In addition to the
+              thrill of the contest, the event served as a learning hub with several informative webinars on the schedule.
             </p>
 
             <button
@@ -224,8 +224,8 @@ useEffect(() => {
           <div className="event-details">
             <h3>QUIMICA'23</h3>
             <p>
-              The Chemical Engineering Society organizes an annual technical
-              extravaganza at BIT Sindri.
+            Participants tested their engineering knowledge in timed competitions designed to challenge their conceptual and analytical thinking. The event not only included fierce competition but also informative webinars. 
+Date- 2nd - 5th December
             </p>
 
             <button
