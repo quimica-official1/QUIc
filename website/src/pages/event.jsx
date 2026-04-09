@@ -40,7 +40,7 @@ const Events = () => {
     {
       title: "BITS BLOG",
       date: "March 12, 2026",
-      description: "Algorithmic problem-solving competition for enthusiasts.",
+      description: "A round involving technical paper submission on topics of industrial relevance.",
       image: "/assets/Bits_blog.jpg",
     },
     {
@@ -135,7 +135,7 @@ useEffect(() => {
             Test your chemical engineering knowledge in a timed quiz designed
             to push our concepts and analytical thinking.
           </p>
-          <p className="date">April 10&11, 2026</p>
+          <p className="date">April 9-11, 2026</p>
           {/* <button onClick={() => navigate("/register")}>Register</button> */}
         </div>
       </section>
@@ -147,8 +147,8 @@ useEffect(() => {
         <div className="featured-info">
           <h2>QUIMICA'25</h2>
           <p>
-            Test your chemical engineering knowledge in a timed quiz designed
-            to push our concepts and analytical thinking.
+           The competition pushed participants to their limits with a fast-paced competitions on engineering fundamentals. In addition to
+            the thrill of the contest, the event served as a learning hub with several informative webinars on the schedule.
           </p>
           <p className="date">March 10, 2026</p>
           <button onClick={() => navigate("/quimica25")}>Explore</button>
@@ -162,8 +162,8 @@ useEffect(() => {
         <div className="featured-info">
           <h2>QUIMICA'23</h2>
           <p>
-            Test your chemical engineering knowledge in a timed quiz designed
-            to push our concepts and analytical thinking.
+           Participants tested their engineering knowledge in timed competitions designed to challenge their conceptual and analytical thinking. The event not only included fierce competition but also informative webinars. 
+Date- 2nd - 5th December
           </p>
           <p className="date">March 10, 2026</p>
           <button onClick={() => navigate("/quimica23")}>Explore</button>
