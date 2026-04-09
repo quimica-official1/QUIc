@@ -44,7 +44,7 @@ const Quimica23 = () => {
       title: "WEBINAR 1",
       date: "March 11, 2026",
       description:
-        "Solve real-world chemical engineering problems in teams.",
+        "A webinar on Transformative Approaches for Emission-Free Future by a LinkedIn Content creator specializing in Chemical Engineering.",
       image: "/assets/webinar7.jpg",
       watch:
         "https://www.youtube.com/live/fZQnUwyNVJs?si=bxuGibLD8p1SrUxm",
@@ -53,7 +53,7 @@ const Quimica23 = () => {
       title: "WEBINAR 2",
       date: "March 12, 2026",
       description:
-        "Algorithmic problem-solving competition for enthusiasts.",
+        "A webinar on Strategic Entrepreneurship by the founder of E-Spin Nanotech Pvt Ltd. ",
       image: "/assets/webinar6.jpg",
       watch:
         "https://www.youtube.com/live/cE4Al055p9M?si=WUcP9lw-tS95Asym",
@@ -62,7 +62,7 @@ const Quimica23 = () => {
       title: "WEBINAR 3",
       date: "March 12, 2026",
       description:
-        "Algorithmic problem-solving competition for enthusiasts.",
+        "A webinar on How Machine Learning can aid CFD analysis and design by an eminent professor from IIT Kanpur.",
       image: "/assets/webinar5.jpg",
       watch:
         "https://www.youtube.com/live/mu9tLbsFHcQ?si=OQ7JdmCmoTENz_Fe",
@@ -71,7 +71,7 @@ const Quimica23 = () => {
       title: "WEBINAR 4",
       date: "March 12, 2026",
       description:
-        "Algorithmic problem-solving competition for enthusiasts.",
+        "A webinar on Pathways to Net Zero by BIT Sindri alumnus and President at Dream Realized LLC.",
       image: "/assets/webinar4.jpg",
       watch:
         "https://www.youtube.com/live/CmPI44QQa9A?si=n2qY6uKn6-Q8nK90",
