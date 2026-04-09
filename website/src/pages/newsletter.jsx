@@ -68,8 +68,8 @@ useEffect(() => {
       {/* ================= HERO ================= */}
         <section className="team-hero reveal reveal-top">
         <h1>Our Exciting magazine</h1>
-        <p>Join us for a series of competitions, workshops, and quizzes designed
-          for chemical engineering enthusiasts!</p>
+        <p>This annual publication is released by the Chemical Engineering Department of BIT Sindri under the banner of QUIMICA.
+It serves as both an informational resource and a practical tool for academic engagement within the department.</p>
       </section>
 
       {/* ================= FEATURED Magazine ================= */}
@@ -82,8 +82,7 @@ useEffect(() => {
     <div className="featured-info">
       <h2>{item.title}</h2>
       <p>
-        Test your chemical engineering knowledge in a timed quiz designed
-        to push our concepts and analytical thinking.
+       The Transition: Bridging the gap between theory and innovation.
       </p>
 
       <button
