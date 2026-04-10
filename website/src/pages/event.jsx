@@ -150,7 +150,7 @@ useEffect(() => {
            The competition pushed participants to their limits with a fast-paced competitions on engineering fundamentals. In addition to
             the thrill of the contest, the event served as a learning hub with several informative webinars on the schedule.
           </p>
-          <p className="date">March 10, 2026</p>
+          {/* <p className="date">March 10, 2026</p> */}
           <button onClick={() => navigate("/quimica25")}>Explore</button>
         </div>
       </section>
@@ -165,7 +165,7 @@ useEffect(() => {
            Participants tested their engineering knowledge in timed competitions designed to challenge their conceptual and analytical thinking. The event not only included fierce competition but also informative webinars. 
 Date- 2nd - 5th December
           </p>
-          <p className="date">March 10, 2026</p>
+          {/* <p className="date">March 10, 2026</p> */}
           <button onClick={() => navigate("/quimica23")}>Explore</button>
         </div>
       </section>

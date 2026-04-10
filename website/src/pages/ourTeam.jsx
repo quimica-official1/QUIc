@@ -45,16 +45,16 @@ const OurTeam = () => {
     { name: "GOURAV KUMAR", batch: "2k23", image: "/assets/team23/gouravsir.jpeg", linkedIn: "https://www.linkedin.com/in/gourav-kumar-gk/" },
     { name: "HARSH KASHYAP", batch: "2k23", image: "/assets/team23/harshsir.jpg", linkedIn: "https://www.linkedin.com/in/harsh-kashyap-07b624290/" },
     { name: "HARSHIT RAI", batch: "2k23", image: "/assets/team23/harshitsir.jpeg", linkedIn: "https://www.linkedin.com/in/harshit-rai-26b7a7282/" },
-    { name: "JIYA RANI", batch: "2k23", image: "/assets/team23/jiyamam.jpg", linkedIn: "https://www.linkedin.com/in/jiya-rani-010aa0290/" },
+    { name: "JIYA RANI", batch: "2k23", image: "/assets/team23/jiyamam2.jpeg", linkedIn: "https://www.linkedin.com/in/jiya-rani-010aa0290/" },
     { name: "PALAK PRIYA", batch: "2k23", image: "/assets/team23/palakmam.jpg", linkedIn: "https://www.linkedin.com/in/palak-priya-54b7891b6/" },
-    { name: "PAYAL JAISWAL", batch: "2k23", image: "/assets/team23/payalmam.jpeg", linkedIn: "https://www.linkedin.com/in/payal-jaiswal-b7bb0a293/" },
+    { name: "PAYAL JAISWAL", batch: "2k23", image: "/assets/team23/payalmam2.jpeg", linkedIn: "https://www.linkedin.com/in/payal-jaiswal-b7bb0a293/" },
     { name: "RAJ KUMAR BARNWAL", batch: "2k23", image: "/assets/team23/rajsir.jpeg", linkedIn: "https://www.linkedin.com/in/raj-kumar-barnwal-2347351b5/" },
     { name: "ROSHNI KUMARI", batch: "2k23", image: "/assets/team23/roshnimam.jpg", linkedIn: "https://www.linkedin.com/in/roshni-kumari-8408182a7/" },
     { name: "SACHIN KARMALI", batch: "2k23", image: "/assets/team23/sachinsir.jpeg", linkedIn: "https://www.linkedin.com/in/sachin-karmali-19ab55290/" },
     { name: "SAMBHAV PRATAP SINGH", batch: "2k23", image: "/assets/team23/sambhavsir.jpeg", linkedIn: "https://www.linkedin.com/in/sambhav-pratap-singh-0b4b86290/" },
     { name: "SANSKAR RAJ SINGH", batch: "2k23", image: "/assets/team23/sanskarsir.jpeg", linkedIn: "https://www.linkedin.com/in/sanskar-raj-singh-4577172a3/" },
     { name: "SATISH KUMAR SAH", batch: "2k23", image: "/assets/team23/satishsir.jpg", linkedIn: "https://www.linkedin.com/in/satishsah9944/" },
-    { name: "SUJAL KUMAR", batch: "2k23", image: "/assets/team23/sujalsir.jpg", linkedIn: "https://www.linkedin.com/in/sujal-kumar-48b60b290/" },
+    { name: "SUJAL KUMAR", batch: "2k23", image: "/assets/team23/sujalsir2.png", linkedIn: "https://www.linkedin.com/in/sujal-kumar-48b60b290/" },
   ];
 
   const team24 = [
