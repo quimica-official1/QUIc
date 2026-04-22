@@ -95,13 +95,13 @@ useEffect(() => {
 
 
 <div className="video-btn">
-  <button
+  {/* <button
     onClick={() => {
       document.getElementById("quimica26").scrollIntoView({ behavior: "smooth" });
     }}
   >
     <p>Live Events</p>
-  </button>
+  </button> */}
 </div>
 
 
