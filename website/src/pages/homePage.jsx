@@ -196,7 +196,7 @@ useEffect(() => {
         {/* QUIMICA 26 */}
         <div className="event-container">
           <div className="event-poster">
-            <img src="/assets/Quimica26.png" alt="Quimica 25" />
+            <img src="/assets/quimica2k26.jpeg" alt="Quimica 25" />
           </div>
 
           <div className="event-details">

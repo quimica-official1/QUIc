@@ -99,7 +99,7 @@ useEffect(() => {
       {/* ================= FEATURED EVENT ================= */}
       <section className="featured-event">
         <div className="featured-image">
-          <img src="/assets/Quimica26.png" alt="QUIMICA'26" />
+          <img src="/assets/quimica2k26.jpeg" alt="QUIMICA'26" />
         </div>
 
         <div className="featured-info">
