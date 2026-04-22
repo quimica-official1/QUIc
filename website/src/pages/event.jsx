@@ -92,6 +92,7 @@ const Events = () => {
       image: "/assets/Impulse.jpg",
     },
   ];
+
 useEffect(() => {
   window.scrollTo(0, 0);
 
@@ -135,7 +136,8 @@ useEffect(() => {
             Test your chemical engineering knowledge in a timed quiz designed
             to push our concepts and analytical thinking.
           </p>
-          <p className="date">April 9-11, 2026</p>
+          <button onClick={() => navigate("/quimica26")}>Explore</button>
+          {/* <p className="date">April 9-11, 2026</p> */}
           {/* <button onClick={() => navigate("/register")}>Register</button> */}
         </div>
       </section>

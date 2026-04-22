@@ -167,31 +167,53 @@ useEffect(() => {
       <section className="events">
         <h2 className="section-title">OUR EVENTS</h2>
 
-
-<section className="featured-event" id="quimica26"> 
+        {/* QUIMICA 26 */}
+{/* <section className="featured-event" id="quimica26"> 
   <div className="event-container main-event-container">
 
-    {/* LEFT SIDE → Poster with border */}
     <div className="event-poster featured-poster">
       <img src="/assets/quimica2k26.jpeg" alt="Quimica 26" />
     </div>
 
-    {/* RIGHT SIDE → (optional, if you want same layout) */}
     <div className="event-details">
       <h3>QUIMICA'26</h3>
       <p>
         The Chemical Engineering Society organizes an annual technical
         extravaganza at BIT Sindri.
       </p>
-       {/* <button
+
+      <button
               className="primary-btn"
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/quimica26")}
             >
-              REGISTER
-            </button> */}
+              EXPLORE
+      </button>
+
     </div>
   </div>
-</section>
+</section> */}
+
+        {/* QUIMICA 26 */}
+        <div className="event-container">
+          <div className="event-poster">
+            <img src="/assets/Quimica26.png" alt="Quimica 25" />
+          </div>
+
+          <div className="event-details">
+            <h3>QUIMICA'26</h3>
+            <p>
+             Participants moved beyond theory into hands-on innovation and real-world problem solving, developing practical ideas and solutions under pressure. Alongside the competition, insightful webinars fostered learning, blending creativity, technical thinking, and innovation.
+            </p>
+
+            <button
+              className="primary-btn"
+              onClick={() => navigate("/quimica26")}
+            >
+              EXPLORE
+            </button>
+          </div>
+        </div>
+
 
         {/* QUIMICA 25 */}
         <div className="event-container">

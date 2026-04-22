@@ -128,7 +128,8 @@ useEffect(() => {
             Test your chemical engineering knowledge in a timed quiz
             designed to push your concepts and analytical thinking.
           </p>
-          <p className="date">March 10, 2026</p>
+          {/* <p className="date">March 10, 2026</p> */}
+          <button onClick={() => navigate("/gallery")}>Glimpses</button>
         </div>
       </section>
 

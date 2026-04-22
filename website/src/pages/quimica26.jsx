@@ -1,137 +1,148 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { supabase } from '../lib/supabase';
-import '../styles/homePage.css';
-import '../styles/quimica26.css';
+import React, { useEffect, useState } from "react";
+import "../styles/quimica26.css";
+import "../styles/homePage.css";
+import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
+// ✅ FontAwesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faLinkedinIn,
+  faInstagram,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+
 const Quimica26 = () => {
   const navigate = useNavigate();
-  const { userProfile, signOut } = useAuth();
-  const [hasQuantum, setHasQuantum] = useState(false);
-  const [quantumActive, setQuantumActive] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Scroll reveal effect
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const reveals = document.querySelectorAll(".reveal");
-
-    const handleScroll = () => {
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-          el.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Check registrations for Quantum
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    checkRegistrations();
-  }, [userProfile]);
+  const events = [
+    {
+      title: "QUIMIDEXTER",
+      date: "March 11, 2026",
+      description:
+        "Solve real-world chemical engineering problems in teams.",
+      image: "/assets/Quimi_Dexter.jpg",
+    },
+    {
+      title: "QUANTUM",
+      date: "March 12, 2026",
+      description:
+        "Algorithmic problem-solving competition for enthusiasts.",
+      image: "/assets/Quantum.jpg",
+    },
+  ];
 
-  const checkRegistrations = async () => {
-    if (!userProfile) {
-      setLoading(false);
-      return;
-    }
+  const seminar = [
+    {
+      title: "SEMINAR 1",
+      date: "March 11, 2026",
+      description:
+        "A webinar on Entrepreneurial Mindset by eminent professor from IIT Patna. ",
+      image: "/assets/seminar1_2k25.jpg",
+    },
+    {
+      title: "SEMINAR 2",
+      date: "March 12, 2026",
+      description:
+        "A webinar on Role of Chemical Engineering in Gas Processing and Pipeline Management by an industry expert from GAIL.",
+      image: "/assets/seminar2_2k25.jpg",
+    },
+  ];
+useEffect(() => {
+  window.scrollTo(0, 0);
 
-    try {
-      // Check Quantum registration
-      const { data: quantum } = await supabase
-        .from('quantum_registrations')
-        .select('uid')
-        .eq('user_email', userProfile.email);
+  const reveals = document.querySelectorAll(".reveal");
 
-      if (quantum && quantum.length > 0) setHasQuantum(true);
+  const handleScroll = () => {
+    reveals.forEach((el) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
 
-      // Fetch Quantum event status
-      const { data: settings } = await supabase
-        .from('app_settings')
-        .select('value')
-        .eq('key', 'quantum_active')
-        .single();
-
-      if (settings && settings.value === true) {
-        setQuantumActive(true);
+      if (elementTop < windowHeight - 100) {
+        el.classList.add("active");
       }
-    } catch (err) {
-      console.error('Error checking registrations:', err);
-    }
-
-    setLoading(false);
+    });
   };
 
-  const handleQuantumRegister = () => {
-    if (hasQuantum) {
-      navigate('/quimica26/quantum/uid');
-    } else {
-      navigate('/quimica26/quantum/register');
-    }
-  };
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
 
-  const handleSignOut = async () => {
-    await signOut();
-    navigate('/');
-  };
-
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
   return (
-    <div className="q26-page">
-      {/* NAVBAR */}
+    <div className="events-page">
+      {/* ================= NAVBAR ================= */}
       <Navbar />
 
-      {/* User bar */}
-      <div className="q26-user-bar">
-        <span className="q26-user-name">
-          Welcome, <strong>{userProfile?.name || 'User'}</strong>
-        </span>
-        <button className="q26-signout-btn" onClick={handleSignOut}>Sign Out</button>
-      </div>
-
-      {/* Hero */}
-      <section className="q26-hero">
-        <h1>QUIMICA'26</h1>
-        <p>Register for the event below</p>
+      {/* ================= HERO ================= */}
+      {/* <section className="hero">
+        <h1>Our Exciting Events</h1>
+        <p>
+          Join us for a series of competitions, workshops, and quizzes
+          designed for chemical engineering enthusiasts!
+        </p>
+      </section> */}
+       <section className="team-hero reveal reveal-top">
+        <h1>Our Exciting Events</h1>
+        <p> Join us for a series of competitions, workshops, and quizzes
+          designed for chemical engineering enthusiasts!</p>
       </section>
 
-      {/* Event Cards — Only Quantum */}
-      <section className="q26-events q26-events-single">
-        {/* Quantum */}
-        <div className="q26-card q26-card-featured">
-          <div className="q26-card-img">
-            <img src="/assets/quantum_poster.jpg" alt="Quantum - Let Your Logic Lead the Way" />
-          </div>
-          <h3>Quantum</h3>
-          <p>"Let Your Logic Lead the Way" — Fight or Flight (Pen & Paper) + Sustain-a-thon. MC-31, Chemical Engineering Dept. 10–11 April 2026.</p>
-          <div className="q26-card-actions">
-            {quantumActive ? (
-              <button className="q26-btn q26-btn-primary" onClick={handleQuantumRegister}>
-                {hasQuantum ? 'View Unique ID' : 'Register for Quantum'}
-              </button>
-            ) : (
-              <button className="q26-btn q26-btn-locked" disabled>
-                <span className="lock-icon">🔒</span>
-                Registrations Locked
-              </button>
-            )}
-          </div>
+
+      {/* ================= FEATURED EVENT ================= */}
+      <section className="featured-event">
+        <div className="featured-image">
+          <img src="/assets/Quimica26.png" alt="QUIMICA'26" />
+        </div>
+
+        <div className="featured-info">
+          <h2>QUIMICA'26</h2>
+          <p>
+            Test your chemical engineering knowledge in a timed quiz
+            designed to push your concepts and analytical thinking.
+          </p>
+          <button onClick={() => navigate("/gallery")}>Glimpses</button>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ================= EVENTS ================= */}
+      <section className="event-grid">
+        {events.map((event, idx) => (
+          <div className="event-card" key={idx}>
+            <img src={event.image} alt={event.title} />
+            <h4>{event.title}</h4>
+            <p>{event.description}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* ================= SEMINARS ================= */}
+      <section className="event-grid">
+        {seminar.map((seminar, idx) => (
+          <div className="event-card" key={idx}>
+            <img src={seminar.image} alt={seminar.title} />
+            <h4>{seminar.title}</h4>
+            <p>{seminar.description}</p>
+            {/* <a
+              href={seminar.watch}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="watch-btn"
+            >
+              WATCH
+            </a> */}
+          </div>
+        ))}
+      </section>
+
+      {/* ================= FOOTER ================= */}
       <Footer />
     </div>
   );

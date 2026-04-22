@@ -19,6 +19,7 @@ import HomePage from './pages/homePage';
 import OurTeam from './pages/ourTeam';
 import Events from './pages/event';
 import Faculty from './pages/faculty';
+import Quimica26 from "./pages/quimica26";
 import Quimica25 from "./pages/quimica25";
 import Quimica23 from "./pages/quimica23";
 import Newsletter from "./pages/newsletter";
@@ -32,8 +33,8 @@ import SignIn from './pages/signin';
 import VerifyEmail from './pages/otpVerify';
 import ForgotPassword from './pages/forgotPassword';
 
-// Protected event pages
-import Quimica26 from './pages/quimica26';
+// // Protected event pages
+import Quimica26Live from './pages/quimica26live';
 import QuantumRegister from './pages/quantumRegister';
 import QuantumUid from './pages/quantumUid';
 
@@ -60,6 +61,7 @@ root.render(
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/quimica23" element={<Quimica23 />} />
           <Route path="/quimica25" element={<Quimica25 />} />
+          <Route path="/quimica26" element={<Quimica26 />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/gallery" element={<Gallery />} />
@@ -72,7 +74,7 @@ root.render(
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
           {/* Protected — Quimica26 events (Quantum only) */}
-          <Route path="/quimica26" element={<ProtectedRoute><Quimica26 /></ProtectedRoute>} />
+          <Route path="/quimica26live" element={<ProtectedRoute><Quimica26Live /></ProtectedRoute>} />
           <Route path="/quimica26/quantum/register" element={<ProtectedRoute><QuantumRegister /></ProtectedRoute>} />
           <Route path="/quimica26/quantum/uid" element={<ProtectedRoute><QuantumUid /></ProtectedRoute>} />
 

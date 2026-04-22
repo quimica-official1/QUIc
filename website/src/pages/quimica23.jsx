@@ -132,6 +132,7 @@ useEffect(() => {
             designed to push your concepts and analytical thinking.
           </p>
           <p className="date">March 10, 2026</p>
+          <button onClick={() => navigate("/gallery")}>Glimpses</button>
         </div>
       </section>
 
