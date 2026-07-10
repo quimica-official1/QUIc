@@ -17,6 +17,7 @@ import Footer from "./pages/footer";
 // Public pages
 import HomePage from './pages/homePage';
 import OurTeam from './pages/ourTeam';
+import OurAlumni from "./pages/ourAlumni";
 import Events from './pages/event';
 import Faculty from './pages/faculty';
 import Quimica26 from "./pages/quimica26";
@@ -57,6 +58,7 @@ root.render(
           {/* Public */}
           <Route path="/" element={<HomePage />} />
           <Route path="/ourTeam" element={<OurTeam />} />
+          <Route path="/ourAlumni" element={<OurAlumni />} />
           <Route path="/events" element={<Events />} />
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/quimica23" element={<Quimica23 />} />

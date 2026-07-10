@@ -69,6 +69,11 @@ useEffect(() => {
 
   <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
     <li>
+      <NavLink to="/ourAlumni" onClick={() => setDropdownOpen(false)}>
+        Our Alumni
+      </NavLink>
+    </li>
+    <li>
       <NavLink to="/gallery" onClick={() => setDropdownOpen(false)}>
         Gallery
       </NavLink>

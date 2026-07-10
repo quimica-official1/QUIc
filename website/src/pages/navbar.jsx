@@ -67,6 +67,14 @@ const Navbar = () => {
 
             <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
               <li>
+                <NavLink to="/ourAlumni" onClick={() => {
+                  setDropdownOpen(false);
+                  setMenuOpen(false);
+                }}>
+                  Our Alumni
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/gallery" onClick={() => {
                   setDropdownOpen(false);
                   setMenuOpen(false);
