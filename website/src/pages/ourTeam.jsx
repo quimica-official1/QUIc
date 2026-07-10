@@ -17,44 +17,24 @@ const OurTeam = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const team22 = [
-    { name: "KARTIK KUMAR", post: "PRESIDENT", batch: "2k22", image: "/assets/team22/kartiksir.jpeg", linkedIn: "https://www.linkedin.com/in/kartik-kumar-550933298/" },
-    { name: "HARSHITA SETH", post: "VICE PRESIDENT", batch: "2k22", image: "/assets/team22/harshitamam.jpeg", linkedIn: "https://www.linkedin.com/in/harshita-seth-74b280257/" },
-    { name: "SOURAV KUMAR", post: "VICE PRESIDENT", batch: "2k22", image: "/assets/team22/souravsir.jpeg", linkedIn: "https://www.linkedin.com/in/sourav-kumar-2a271a256/" },
-    { name: "RAVI SHANKAR PRASAD", post: "SECRETARY", batch: "2k22", image: "/assets/team22/ravisir2.jpeg", linkedIn: "https://www.linkedin.com/in/ravi-shankar-prasad-bitsindri/" },
-    { name: "DIKSHA", post: "JOINT SECRETARY", batch: "2k22", image: "/assets/team22/dikshamam.jpeg", linkedIn: "https://www.linkedin.com/in/diksha-jha-32342628b/" },
-    { name: "NIDHISHREE MAHATO", post: "JOINT SECRETARY", batch: "2k22", image: "/assets/team22/nidhimam.jpg", linkedIn: "https://www.linkedin.com/in/nidhishree-mahato/" },
-    { name: "KOMAL KUMARI", post: "SCHOLASTIC HEAD", batch: "2k22", image: "/assets/team22/komalmam.jpeg", linkedIn: "https://www.linkedin.com/in/komalkri08/" },
-    { name: "RUDRANIL GANGULY", post: "SCHOLASTIC HEAD", batch: "2k22", image: "/assets/team22/rudranilsir2.jpeg", linkedIn: "https://www.linkedin.com/in/rudranil-ganguly-305411254/" },
-    { name: "SAHITYA KUMAR", post: "TREASURER", batch: "2k22", image: "/assets/team22/sahityasir.jpg", linkedIn: "https://www.linkedin.com/in/sahitya-kumar-897a27253/" },
-    { name: "AKASH NATH", post: "JOINT TREASURER", batch: "2k22", image: "/assets/team22/akashsir2.png", linkedIn: "https://www.linkedin.com/in/theakashnath/" },
-    { name: "SOURAV OMONG", post: "JOINT TREASURER", batch: "2k22", image: "/assets/team22/omangsir.jpeg", linkedIn: "https://www.linkedin.com/in/sourav-omong-51655b257/" },
-    { name: "HARSH GIRI", post: "TECHNICAL HEAD", batch: "2k22", image: "/assets/team22/harshsir.jpg", linkedIn: "https://www.linkedin.com/in/harsh-giri-b84889211/" },
-    { name: "MANOJ MURMU", post: "DESIGN & CREATIVE HEAD", batch: "2k22", image: "/assets/team22/manojsir.jpg", linkedIn: "https://www.linkedin.com/in/manoj-murmu/" },
-    { name: "DEEPTI KUMARI", post: "ALUMNI & OUTREACH HEAD", batch: "2k22", image: "/assets/team22/deeptimam.jpeg", linkedIn: "https://www.linkedin.com/in/deepti-kumari-482049258/" },
-    { name: "DONA BHATTACHARJEE", post: "ALUMNI & OUTREACH HEAD", batch: "2k22", image: "/assets/team22/donamam.jpg", linkedIn: "https://www.linkedin.com/in/dona-bhattacharjee-a95b25273/" },
-    { name: "SAMRIDDHI SINGH", post: "PUBLIC RELATION OFFICER", batch: "2k22", image: "/assets/team22/samriddhimam.jpg", linkedIn: "" },
-    { name: "AASHI RANI", post: "JOINT PRO", batch: "2k22", image: "/assets/team22/aashimam.jpg", linkedIn: "https://www.linkedin.com/in/aashi-rani-a6824730a/" },
-  ];
-
   const team23 = [
-    { name: "KUMAR ANJANI GAURAV", batch: "2k23", image: "/assets/team23/anjanisir.jpg", linkedIn: "https://www.linkedin.com/in/kumar-anjani-gaurav-016693287/" },
-    { name: "ANUPRIYA KUMARI", batch: "2k23", image: "/assets/team23/anupriyamam.jpg", linkedIn: "https://www.linkedin.com/in/anupriya-kumari-251b29290/" },
-    { name: "BABAN KUMAR GUPTA", batch: "2k23", image: "/assets/team23/babansir.JPG", linkedIn: "https://www.linkedin.com/in/baban-kumar-gupta-b82b44290/" },
-    { name: "BITTU KUMAR", batch: "2k23", image: "/assets/team23/bittusir.jpg", linkedIn: "https://www.linkedin.com/in/bittukumar7277/" },
-    { name: "GOURAV KUMAR", batch: "2k23", image: "/assets/team23/gouravsir.jpeg", linkedIn: "https://www.linkedin.com/in/gourav-kumar-gk/" },
-    { name: "HARSH KASHYAP", batch: "2k23", image: "/assets/team23/harshsir.jpg", linkedIn: "https://www.linkedin.com/in/harsh-kashyap-07b624290/" },
-    { name: "HARSHIT RAI", batch: "2k23", image: "/assets/team23/harshitsir.jpeg", linkedIn: "https://www.linkedin.com/in/harshit-rai-26b7a7282/" },
-    { name: "JIYA RANI", batch: "2k23", image: "/assets/team23/jiyamam2.jpeg", linkedIn: "https://www.linkedin.com/in/jiya-rani-010aa0290/" },
-    { name: "PALAK PRIYA", batch: "2k23", image: "/assets/team23/palakmam.jpg", linkedIn: "https://www.linkedin.com/in/palak-priya-54b7891b6/" },
-    { name: "PAYAL JAISWAL", batch: "2k23", image: "/assets/team23/payalmam2.jpeg", linkedIn: "https://www.linkedin.com/in/payal-jaiswal-b7bb0a293/" },
-    { name: "RAJ KUMAR BARNWAL", batch: "2k23", image: "/assets/team23/rajsir.jpeg", linkedIn: "https://www.linkedin.com/in/raj-kumar-barnwal-2347351b5/" },
-    { name: "ROSHNI KUMARI", batch: "2k23", image: "/assets/team23/roshnimam.jpg", linkedIn: "https://www.linkedin.com/in/roshni-kumari-8408182a7/" },
-    { name: "SACHIN KARMALI", batch: "2k23", image: "/assets/team23/sachinsir.jpeg", linkedIn: "https://www.linkedin.com/in/sachin-karmali-19ab55290/" },
-    { name: "SAMBHAV PRATAP SINGH", batch: "2k23", image: "/assets/team23/sambhavsir.jpeg", linkedIn: "https://www.linkedin.com/in/sambhav-pratap-singh-0b4b86290/" },
-    { name: "SANSKAR RAJ SINGH", batch: "2k23", image: "/assets/team23/sanskarsir.jpeg", linkedIn: "https://www.linkedin.com/in/sanskar-raj-singh-4577172a3/" },
-    { name: "SATISH KUMAR SAH", batch: "2k23", image: "/assets/team23/satishsir.jpg", linkedIn: "https://www.linkedin.com/in/satishsah9944/" },
-    { name: "SUJAL KUMAR", batch: "2k23", image: "/assets/team23/sujalsir2.png", linkedIn: "https://www.linkedin.com/in/sujal-kumar-48b60b290/" },
+    { name: "RAJ KUMAR BARNWAL", post: "PRESIDENT", batch: "2k23", image: "/assets/team23/rajsir.jpeg", linkedIn: "https://www.linkedin.com/in/raj-kumar-barnwal-2347351b5/" },
+    { name: "BITTU KUMAR", post: "VICE PRESIDENT", batch: "2k23", image: "/assets/team23/bittusir.jpg", linkedIn: "https://www.linkedin.com/in/bittukumar7277/" },
+    { name: "ROSHNI KUMARI", post: "VICE PRESIDENT", batch: "2k23", image: "/assets/team23/roshnimam.jpg", linkedIn: "https://www.linkedin.com/in/roshni-kumari-8408182a7/" },
+    { name: "SAMBHAV PRATAP SINGH", post: "SECRETARY", batch: "2k23", image: "/assets/team23/sambhavsir.jpeg", linkedIn: "https://www.linkedin.com/in/sambhav-pratap-singh-0b4b86290/" },
+    { name: "ANUPRIYA KUMARI", post: "SCHOLASTIC HEAD", batch: "2k23", image: "/assets/team23/anupriyamam.jpg", linkedIn: "https://www.linkedin.com/in/anupriya-kumari-251b29290/" },
+    { name: "HARSH KASHYAP", post: "SCHOLASTIC HEAD", batch: "2k23", image: "/assets/team23/harshsir.jpg", linkedIn: "https://www.linkedin.com/in/harsh-kashyap-07b624290/" },
+    { name: "SANSKAR RAJ SINGH", post: "TREASURER", batch: "2k23", image: "/assets/team23/sanskarsir.jpeg", linkedIn: "https://www.linkedin.com/in/sanskar-raj-singh-4577172a3/" },
+    { name: "BABAN KUMAR GUPTA", post: "JOINT SECRETARY", batch: "2k23", image: "/assets/team23/babansir.JPG", linkedIn: "https://www.linkedin.com/in/baban-kumar-gupta-b82b44290/" },
+    { name: "HARSHIT RAI", post: "JOINT SECRETARY", batch: "2k23", image: "/assets/team23/harshitsir.jpeg", linkedIn: "https://www.linkedin.com/in/harshit-rai-26b7a7282/" },
+    { name: "PALAK PRIYA", post: "JOINT SECRETARY", batch: "2k23", image: "/assets/team23/palakmam.jpg", linkedIn: "https://www.linkedin.com/in/palak-priya-54b7891b6/" },
+    { name: "JIYA RANI", post: "JOINT TREASURER", batch: "2k23", image: "/assets/team23/jiyamam2.jpeg", linkedIn: "https://www.linkedin.com/in/jiya-rani-010aa0290/" },
+    { name: "SUJAL KUMAR", post: "JOINT TREASURER", batch: "2k23", image: "/assets/team23/sujalsir2.png", linkedIn: "https://www.linkedin.com/in/sujal-kumar-48b60b290/" },
+    { name: "KUMAR ANJANI GAURAV", post: "JOINT TREASURER", batch: "2k23", image: "/assets/team23/anjanisir.jpg", linkedIn: "https://www.linkedin.com/in/kumar-anjani-gaurav-016693287/" },
+    { name: "PAYAL JAISWAL", post: "CHIEF TECHNICAL OFFICER", batch: "2k23", image: "/assets/team23/payalmam2.jpeg", linkedIn: "https://www.linkedin.com/in/payal-jaiswal-b7bb0a293/" },
+    { name: "GOURAV KUMAR", post: "ALUMNI INCHARGE", batch: "2k23", image: "/assets/team23/gouravsir.jpeg", linkedIn: "https://www.linkedin.com/in/gourav-kumar-gk/" },
+    { name: "SATISH KUMAR SAH", post: "ALUMNI INCHARGE", batch: "2k23", image: "/assets/team23/satishsir.jpg", linkedIn: "https://www.linkedin.com/in/satishsah9944/" },
+    { name: "SACHIN KARMALI", post: "PUBLIC RELATION OFFICER", batch: "2k23", image: "/assets/team23/sachinsir.jpeg", linkedIn: "https://www.linkedin.com/in/sachin-karmali-19ab55290/" },
   ];
 
   const team24 = [
@@ -112,36 +92,6 @@ const OurTeam = () => {
       <h1 className="teamtext">OUR POST BEARERS</h1>
       <section className="team-container">
       
-        {team22.map((member, idx) => (
-          <div className="team-card reveal reveal-left" key={idx}>
-            <img src={member.image} alt={member.name} />
-
-            {/* NORMAL CONTENT */}
-            <div className="team-content">
-              <h3>{member.name}</h3>
-              <p>{member.post}</p>
-              <p>{member.batch}</p>
-
-              {member.linkedIn && (
-                <a href={member.linkedIn} className="linkedin-icon" target="blank">
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </a>
-              )}
-            </div>
-            
-
-            {/* 🔥 HOVER OVERLAY */}
-            {/* <div className="hover-overlay">
-              <h3>{member.name}</h3>
-              <p>{member.post}</p>
-              <p>{member.batch}</p>
-            </div> */}
-          </div>
-        ))}
-      </section>
-
-      <h1 className="teamtext">TEAM 2K23</h1>
-      <section className="team-container">
         {team23.map((member, idx) => (
           <div className="team-card reveal reveal-left" key={idx}>
             <img src={member.image} alt={member.name} />
@@ -158,13 +108,6 @@ const OurTeam = () => {
                 </a>
               )}
             </div>
-
-            {/* 🔥 HOVER OVERLAY */}
-            {/* <div className="hover-overlay">
-              <h3>{member.name}</h3>
-              <p>{member.post}</p>
-              <p>{member.batch}</p>
-            </div> */}
           </div>
         ))}
       </section>
