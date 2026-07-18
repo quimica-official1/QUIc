@@ -6,6 +6,29 @@
 
 /* ================= HERO ================= */
 
+.batch-heading-wrapper{
+  display: flex;
+  justify-content: center;
+  margin: 35px 0;
+} 
+
+.teamtext-alumni {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+
+  background: #b8d2ff;
+  color: #07111d;
+  border-radius: 8px;
+  padding: 5px 15px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(0, 187, 255, 0.25);
+}
+
 .ourAlumni .team-hero {
     position: relative;
     margin-top: 60px;
@@ -25,7 +48,6 @@
   left: 0;
   width: 100%;
   height: 120px;
-
   background: linear-gradient(to bottom, transparent, #050505);
 }
 
@@ -46,19 +68,57 @@
 }
 
 /* ================= TEAM GRID ================= */
-.team-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 4 per row */
-  gap: 20px;
-  padding: 50px 6%;
+.team-container-alumni {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 35px 25px;
+
+}
+
+.batch-badge {
+  position: absolute;
+
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 65px;
+  margin-bottom: 15px;
+  padding: 1px 5px 1px 5px;
+
+  background: #b8d2ff;
+  color: #07111d;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(0, 187, 255, 0.25);
+
+  z-index: 2;
 }
 
 /* ================= CARD ================= */
 /* 🔥 FORCE SMALL CARD */
-.team-card {
-  width: 180px !important;
-  height: 230px !important;
+.team-card-alumni {
+  width: 150px !important;
+  height: 200px !important;
   perspective: 1000px;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+
+  padding: 25px 7px;
+  margin-top: 8px;
+  border: 1px solid rgba(18, 63, 139, 0.5);
+  box-shadow: 0 10px 55px #ff747414;
+  transition: 0.3s ease;
 }
 
 /* 🔥 FORCE INNER SIZE */
@@ -68,7 +128,7 @@
 }
 
 
-.team-card:hover .card-inner {
+.team-card-alumni:hover .card-inner {
   transform: rotateY(180deg);
 }
 
@@ -76,7 +136,7 @@
 
 /* ================= IMAGE ================= */
 .card-front img,
-.team-card img {
+.team-card-alumni img {
   width: 100px !important;
   height: 100px !important; /* 🔥 smaller */
   border-radius: 50%;
@@ -85,36 +145,42 @@
 }
 
 /* ================= TEXT ================= */
-.team-card .team-content h3 {
+.team-card-alumni .team-content h3 {
+  margin-bottom: 5px;
   color: white;
   font-size: 12px !important;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+}
+.team-card-alumni .team-content .alumniName {
+  color: #b8d2ff;
+  text-shadow: 0 0 2px #00bbff,
+               0 0 4px #0b2a54;
 }
 
-.team-card .team-content p {
-  font-size: 10px !important;
-  color: #ffffff;
+.alumni-link {
+  text-decoration: none;
 }
-.team-card {
+.alumniName:hover{
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.alumniName:hover {
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+
+.team-card-alumni .team-content p {
+  font-size: 10px !important;
+  color: #b8bec7;
+  line-height: 1.6;
+  margin: 2px 0;
+  font-weight: 600;
+}
+
+.team-card-alumni {
   background: #070a0c !important; /* 🔥 NEW COLOR */
   border-radius: 12px;
-}
-/* ================= LINKEDIN ================= */
-.linkedin-icon {
-  margin-top: 8px;
-  background: #0077b5;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.linkedin-icon:hover {
-  transform: scale(1.1);
 }
 
 /* ================= OVERLAY ================= */
@@ -134,63 +200,86 @@
   transition: 0.4s ease;
 }
 
-.team-card:hover .hover-overlay {
+.team-card-alumni:hover .hover-overlay {
   opacity: 1;
 }
 
 /* ================= TEXT CENTER ================= */
-.teamtext {
+.teamtext-alumni {
   margin-top: 30px;
   display: flex;
   justify-content: center;
 }
 
 /* ================= ANIMATION ================= */
-.team-container .reveal {
+.team-container-alumni .reveal {
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.team-container .reveal-left {
+.team-container-alumni .reveal-left {
   transform: translateX(-80px);
 }
 
-.team-container .reveal-right {
+.team-container-alumni .reveal-right {
   transform: translateX(80px);
 }
 
-.team-container .reveal-top {
+.team-container-alumni .reveal-top {
   transform: translateY(-80px);
 }
 
-.team-container .reveal.active {
+.team-container-alumni .reveal.active {
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .team-container {
-    grid-template-columns: repeat(3, 1fr);
+  .team-container-alumni {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .team-container {
-    grid-template-columns: repeat(2, 1fr);
+  .team-container-alumni {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (max-width: 480px) {
-  .team-container {
-    grid-template-columns: 1fr; /* 1 card per row */
-    justify-items: center;     /* center card */
+
+@media (max-width: 381px) {
+  .team-card-alumni {
+  width: 120px !important;
+  height: 140px !important;
+
+  padding: 15px 5px;
   }
 
-  .team-card {
-    width: 70% !important;   /* 🔥 take full width */
-    height: 240px !important;
+  .team-card-alumni .team-content h3 {
+  font-size: 10px !important;
+  margin-top: 4px;
+}
+
+.team-card-alumni .team-content p {
+  font-size: 8px !important;
+  color: #b8bec7;
+  line-height: 1.2;
+  margin: 1px 0;
+  font-weight: 400;
+}
+
+}
+
+@media (max-width: 200px) {
+  .team-container-alumni {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card-alumni {
+    width: 50% !important;   /* 🔥 take full width */
+    height: 50% !important;
   }
 
   .team-hero h1 {
