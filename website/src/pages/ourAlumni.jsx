@@ -157,6 +157,8 @@ const OurAlumni = () => {
         {team22.map((member, idx) => (
           <div className="team-card-alumni reveal reveal-left" key={idx}>
             <div className="batch-badge">2K22</div>
+
+            <img src={member.image} alt={member.name} />
             {/* NORMAL CONTENT */}
             <div className="team-content">
               <a href={member.linkedIn} target="blank" className="alumni-link"><h3 class="alumniName">{member.name}</h3></a>
