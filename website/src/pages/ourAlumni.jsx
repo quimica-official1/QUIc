@@ -69,7 +69,6 @@ const OurAlumni = () => {
     { name: "SHALVI KUMARI GUPTA", societyRole: "DESIGN & CREATIVE HEAD", currentRole: "Process Design Engineer" , organization: "Technip Energies" ,  linkedIn: "https://www.linkedin.com/in/shalvi-gupta-5b98b3209/" },
     { name: "NISHANT KUMAR YADAV", societyRole: "ALUMNI INCHARGE", currentRole: "Senior Process Engineer" , organization: "Tata Consulting Engineers" ,  linkedIn: "https://www.linkedin.com/in/nishantydv28/" },
     { name: "RASHMITA SOREN", societyRole: "ALUMNI INCHARGE", currentRole: "Assistant Manager" , organization: "Vedanta Aluminium Metal Limited" ,  linkedIn: "https://www.linkedin.com/in/rashmita-soren/" },
-    { name: "ADARSH KUMAR", societyRole: "PUBLIC RELATION OFFICER", currentRole: "" , organization: "" ,  linkedIn: "" },
     { name: "ADARSH KUMAR", societyRole: "PUBLIC RELATION OFFICER", currentRole: "" , organization: "" ,  linkedIn: "https://www.linkedin.com/in/adarsh-kumar-63a3a1220/" },
     { name: "ASHUTOSH KUMAR PANDEY", societyRole: "PUBLIC RELATION OFFICER", currentRole: "Process Engineer" , organization: "Technip Energies" ,  linkedIn: "https://www.linkedin.com/in/ashutosh-kumar-pandey-039833217/" },
     { name: "SAHITYA SUMAN", societyRole: "EVENT COORDINATOR", currentRole: "Process Engineer" , organization: "Shree Cement Ltd." , linkedIn: "https://www.linkedin.com/in/sahitya-suman-080866221/" },
